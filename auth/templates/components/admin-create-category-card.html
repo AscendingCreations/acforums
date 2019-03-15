@@ -1,0 +1,48 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Create Category
+    {% endblock card_title %}
+    {% block card_body %}
+        {{ form.csrf_token }}
+        <div>
+            {{ render_field(form.title, class='uk-input', placeholder='Category Title') }}
+            {{ render_field(form.order, class='uk-input', placeholder='Category Order') }}
+        </div>
+        <table class="uk-table uk-table-small uk-table-hover uk-table-striped">
+            <thead>
+                <tr>
+                    <th>Group Name</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for view, group in groups %}
+                    <tr>
+                        <td>{{ group.display }}</td>
+                        <td>{{ render_field(view, class='uk-checkbox uk-align-right') }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endblock card_body %}
+    {% block card_footer %}
+        <div class="uk-card-footer">
+            <div class="uk-align-right uk-inline">
+                {{ form.password(class='uk-input', placeholder='Password') | safe }}
+                <button uk-tooltip="Save" uk-icon="icon: check" class="uk-form-icon uk-form-icon-flip" type="submit"></button>
+            </div>
+        </div>
+        {{ field_errors(form.password) }}
+    {% endblock card_footer %}
+{% endblock card %}

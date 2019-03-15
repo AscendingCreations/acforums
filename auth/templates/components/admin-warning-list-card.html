@@ -1,0 +1,66 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Admin Information
+    {% endblock card_title %}
+    {% block card_body %}
+        {{ form.csrf_token }}
+        {% if warnings %}
+            <table class="uk-table uk-table-hover uk-table-striped uk-table-small">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>edit</th>
+                        <th>Issuer</th>
+                        <th>Issued To</th>
+                        <th>Points Given</th>
+                        <th>Date Received</th>
+                        <th>Selection</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for select, warning in warnings %}
+                        <tr>
+                            
+                            <td>{{ warning.id }}</td>
+                            <td>
+                                <a href="{{ url_for('warn.admin_edit_warning', id=warning.id) }}" class="uk-button uk-button-primary">
+                                    Edit Warning
+                                </a>
+                            </td>
+                            <td>{{ warning.issuer.username }}</td>
+                            <td>{{ warning.user.username }}</td>
+                            <td>{{ warning.points }}</td>
+                            <td>{{ warning.date }}</td>
+                            <td>{{ render_field(select, class='uk-checkbox') }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            {{ messagebox('Nothing Here!', 'No warnings have been issued yet.')}}
+        {% endif %}
+    {% endblock card_body %}
+    {% block card_footer %}
+        <div class="uk-card-footer">
+            <div class="uk-align-left">
+                {{ render_pagination(pages, 'warn.admin_view_warnings', 'Previous', 'Next') }}
+            </div>
+            <div class="uk-align-right uk-inline">
+                {{ form.password(class='uk-input', placeholder='Password') | safe }}
+                <button uk-tooltip="Delete" uk-icon="icon: trash" class="uk-form-icon uk-form-icon-flip" type="submit"></button>
+            </div>
+        </div>
+        {{ field_errors(form.password) }}
+    {% endblock card_footer %}
+{% endblock card %}

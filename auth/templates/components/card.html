@@ -1,0 +1,21 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+<div class="uk-card uk-card-default">
+    <div class="uk-card-header">
+        <span class="uk-card-title">
+            {% block card_title %}{% endblock card_title %}
+        </span>
+        {% block card_badge %}{% endblock card_badge %}
+    </div>
+    <div class="uk-card-body">
+        {% block card_body %}{% endblock card_body %}
+    </div>
+    {% block card_footer %}{% endblock card_footer %}
+</div>

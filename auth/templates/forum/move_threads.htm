@@ -1,0 +1,41 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends 'base.htm' %}
+
+{% from 'form_utils.htm' import render_field, field_errors %}
+
+{% block nav %}
+	<a href="{{ url_for('forum.view_forum') }}">Forums</a>{% if board %}->
+	<a href="{{ url_for('forum.view_board', board_id=board.id) }}">{{board.title}}</a>->
+	Move Threads
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+	<div class="card divdown">
+		<span class="caption">Move Items Selected From - {{board.title}}</span>
+		<div class="content" style="margin-top: 2px;">
+			<form method="POST">
+				{{ form.csrf_token }}
+				<div class="overflow-box">
+					<div class="row">
+						Where Would you like to move the Posts too?.
+						{{ render_field(form.boards, class='full-width', placeholder='Board') }}
+					</div>
+					<div class="row ">
+						<input class="primary pull-right divleft2" type="submit" value="Move" tabindex="4" />
+						{{ form.password(class='pull-right', placeholder='Password') | safe }}
+					</div>
+					{{ field_errors(form.password) }}
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}

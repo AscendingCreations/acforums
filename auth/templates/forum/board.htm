@@ -1,0 +1,60 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends 'base.htm' %}
+
+{% from 'form_utils.htm' import render_field, render_board_pagination, field_errors %}
+{% from 'form_utils.htm' import messagebox %}
+{% from '/forum/subboards.htm' import render_subboards %}
+
+{% block nav %}
+	<li><a href="{{ url_for('forum.view_forum') }}">Forums</a></li>
+	{% if board %}
+		<li class="uk-disabled"><a>{{board.title}}</a></li>
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+	{% if board %}
+		{{ render_subboards(board) }}
+		{% if pages.items %}
+			<form method="POST">
+				{{ form.csrf_token }}
+				{% include "components/thread-card.html" %}
+				<div>
+					{{ render_board_pagination(pages, board.id, 'forum.view_board', 'Previous', 'Next') }}
+
+					{% if user.in_group('administrators') %}
+						{% if check_right('thread:remove') or check_right('thread:move') or check_right('thread:sticky') %} 
+							{{ form.password(class='uk-input uk-align-left', placeholder='Password') | safe }}
+						{% endif %}
+						{% if check_right('thread:sticky') %} 
+							{{ form.sticky(class='uk-button uk-button-primary uk-align-right', placeholder='UnSticky') | safe }}
+						{% endif %}
+						{% if check_right('thread:sticky') %} 
+							{{ form.unsticky(class='uk-button uk-button-primary uk-align-right', placeholder='Sticky') | safe }}
+						{% endif %}
+						{% if check_right('thread:move') %} 
+							{{ form.move(class='uk-button uk-button-primary uk-align-right', placeholder='Move') | safe }}
+						{% endif %}
+						{% if check_right('thread:remove') %} 
+							{{ form.delete(class='uk-button uk-button-danger uk-align-right', placeholder='Delete') | safe }}
+						{% endif %}
+						{{ field_errors(form.password) }}
+					{% endif %}
+				</div>
+			</form>
+		{% else %}
+			{% include "components/no-thread-card.html" %}
+		{% endif %}
+	{% else %}
+		{{ messagebox('Nothing Here!',
+			'Nothing has been created or you do not have permissions to view Anything.')}}
+	{% endif %}
+{% endblock %}

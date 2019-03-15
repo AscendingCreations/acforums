@@ -1,0 +1,34 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Sign Up
+    {% endblock card_title %}
+    {% block card_body %}
+        <div uk-grid>
+            {{ render_field(form.username, class='uk-input', placeholder='Username') }}
+            {% if form.email %}
+                {{ render_field(form.email, class='uk-input', placeholder='user@example.com') }}
+            {% endif %}
+            {{ render_field(form.loginconfirm, class='uk-checkbox', placeholder='loginconfirm') }}
+            {{ render_field(form.display, class='uk-input', placeholder='Display name') }}
+            {{ render_field(form.displayconfirm, class='uk-checkbox', placeholder='displayconfirm') }}
+            {{ render_field(form.issixteen, class='uk-checkbox', placeholder='issixteen') }}
+            {{ render_field(form.password, class='uk-input', placeholder='Password') }}
+            {{ render_field(form.confirm_password, class='uk-input', placeholder='Confirm Password') }}
+
+            <div class="row">
+                <input class="uk-button uk-button-primary" type="submit" value="Sign Up" tabindex="4" />
+            </div>
+        </div>
+    {% endblock card_body %}
+{% endblock card %}

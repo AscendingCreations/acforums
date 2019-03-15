@@ -1,0 +1,38 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Create User
+    {% endblock card_title %}
+    {% block card_body %}
+        <div uk-grid>
+            {{ form.csrf_token }}
+            {{ render_field(form.username, class='uk-input', placeholder='User name') }}
+            {{ render_field(form.email, class='uk-input', placeholder='user@example.com') }}
+            {{ render_field(form.display, class='uk-input', placeholder='Display name') }}
+            {{ render_field(form.title, class='uk-input', placeholder='Title') }}
+            {{ render_field(form.first_name, class='uk-input', placeholder='First name') }}
+            {{ render_field(form.last_name, class='uk-input', placeholder='Last name') }}
+            {{ render_field(form.new_password, class='uk-input', placeholder='User Password') }}
+            {{ render_field(form.confirm_password, class='uk-input', placeholder='Confirm Password') }}
+        </div>
+    {% endblock card_body %}
+    {% block card_footer %}
+        <div class="uk-card-footer">
+            <div class="uk-align-right uk-inline">
+                {{ form.password(class='uk-input', placeholder='Password') | safe }}
+                <button uk-tooltip="Save" uk-icon="icon: check" class="uk-form-icon uk-form-icon-flip" type="submit"></button>
+            </div>
+        </div>
+        {{ field_errors(form.password) }}
+    {% endblock card_footer %}
+{% endblock card %}

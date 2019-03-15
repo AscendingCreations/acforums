@@ -1,0 +1,54 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+<article class="uk-comment">
+    <div class="uk-comment-header uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+            {% if post.creator.email and post.creator.avatarconfirm %}
+                <img class="uk-align-left" src="{{ post.creator.email.email | gravatar(size=50) }}"/>
+            {% else %}
+                <img class="uk-align-left" src="{{ 'spirean@spirean.com' | gravatar(size=50) }}"/>
+            {% endif %} 
+        </div>
+        <div class="uk-width-expand">
+            <h4 class="uk-comment-title uk-margin-remove">
+                <a class="uk-link-reset" href="{{ url_for('user.profile', user_id=post.creator_id) }}">{{ post.creator.username }}</a>
+            </h4>
+            <ul class="uk-comment-meta uk-subnav uk-margin-remove-top">
+                <li>{{ post.creator.postnum }} Posts</li>
+                <li>{{ conv_to_user_time(post.post_time) }}</li>
+                <li>
+                    <a href="{{ url_for('forum.board_reply_post', board_id=board_id, thread_id=thread.id, post_id=post.id) }}"
+                    class="uk-button uk-button-text"><span uk-icon="reply"></span> Reply</a>
+                </li>
+                {% if post.creator.id == user.id %}
+                    <li>
+                        <a href="{{ url_for('forum.board_edit_post', board_id=board_id, thread_id=thread.id, post_id=post.id) }}"
+                        class="uk-button uk-button-text"><span uk-icon="pencil"></span> Edit</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+		{% if check_right('forum:mod') or check_right('forum:mod:{thread.board_id}')%}
+			<div class="uk-align-right">{{ render_field(select, class="uk-checkbox") }}</div>
+		{% endif %}
+    </div>
+    <div class="uk-comment-body">
+        <p>{{ post.message | safe }}</p>
+        {% if post.editor %}
+            <div class="uk-divider"></div>
+            Lasted Edited on: {{ conv_to_user_time(post.edit_time)}} By {{ post.editor.display }}
+            {% if post.editor.email and post.editor.avatarconfirm %}
+                <img src="{{ post.editor.email.email | gravatar(size=15) }}"/>
+            {% else %}
+                <img src="{{ 'spirean@spirean.com' | gravatar(size=15) }}"/>
+            {% endif %} 
+        {% endif %}
+    </div>
+</article>

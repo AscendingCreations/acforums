@@ -1,0 +1,44 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Admin Information
+    {% endblock card_title %}
+    {% block card_body %}
+        {{ form.csrf_token }}
+        <div uk-grid>
+            <div class="uk-width-1-2"> 
+                <span>Newest Member:</span>
+                <a href="{{ url_for('admin.user_edit', user_id=newest.id) }}">{{ newest.username }}</a>
+            </div>
+            <div class="uk-width-1-2"> <span>Total Users:</span> {{ users }} </div>
+            <div class="uk-width-1-2"> <span>Total Posts:</span> {{ posts }} </div>
+            <div class="uk-width-1-2"> <span>Total Threads:</span> {{ threads }} </div>
+            <div class="uk-width-1-2"> <span>Total Warnings:</span> {{ warnings }} </div>
+            <div class="uk-width-1-2"> <span>Total Logs:</span> {{ logs }} </div>
+        </div>
+        <div uk-grid>
+            <div class="uk-width-1-2">
+                {{ form.resetterms(class='uk-button uk-button-primary', placeholder='Reset the Terms Agreements') | safe }}
+            </div>
+            <div class="uk-width-1-2">
+                {{ form.resetprivacy(class='uk-button uk-button-primary', placeholder='Reset the Privacy Agreements') | safe }}
+            </div>
+            <div class="uk-width-1-2">
+                {{ form.recountboard(class='uk-button uk-button-primary', placeholder='Recount board posts') | safe }}
+            </div>
+            <div class="uk-width-1-2">
+                {{ form.recountuser(class='uk-button uk-button-primary', placeholder='Recount user posts') | safe }}
+            </div>
+        </div>
+    {% endblock card_body %}
+{% endblock card %}

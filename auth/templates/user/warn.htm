@@ -1,0 +1,42 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends 'base.htm' %}
+
+{% from 'form_utils.htm' import render_field, field_errors %}
+
+{% block nav %}
+	<a href="{{ url_for('forum.view_forum') }}">Forums</a>->
+	Warn User
+{% endblock %}
+
+{% block content %}
+	<div class="card"> 
+		<span class="caption">Issuing Warning</span>
+		<div class="content">
+			<form method="POST">
+				{{ form.csrf_token }}
+				<div class="grid gutter">
+					<div class="row">
+						Warning To Be Issued To: {{ user.username }}
+					</div>
+					<div class="row">
+						{{ render_field(form.text, class='full-width', placeholder='Message') }}
+						{{ render_field(form.points, class='full-width', placeholder='Points Issued') }}
+					</div>
+					<div class="row">
+						<input class="primary pull-right" style='margin-left: 2px' type="submit" value="Issue" />
+						{{ form.password(class='pull-right', placeholder='Password') | safe }}
+					</div>
+						{{ field_errors(form.password) }}
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}

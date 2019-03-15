@@ -1,0 +1,110 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Private Messages
+    {% endblock card_title %}
+    {% block card_badge %}
+        <div class="uk-card-badge">
+            {% if not sent %}
+                <a href="{{ url_for('user.send_pm') }}" class="uk-button uk-button-primary">
+                    Create PM
+                </a>
+            {% endif %}
+        </div>
+    {% endblock card_badge %}
+    {% block card_body %}   
+        <div>
+            {% if pms %}
+                <div>
+                    <table class="uk-table uk-table-small uk-table-hover uk-table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Read/Unread</th>
+                                <th>Title</th>
+                                <th>{% if not sent %}sender{% else %}receiver{% endif %}</th>
+                                <th>Date</th>
+                                <th>Selection</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for select, pm in pms %}
+                                {% if not sent %}
+                                    {%  set  userdata =  pm.sender%}
+                                {% else %}
+                                    {% set  userdata = pm.user %}
+                                {% endif %}
+                            
+                                {% if pm.read %}
+                                    <tr>
+                                {% else %}
+                                    <tr style="background-color: rgba(80, 220, 100, 0.3);">
+                                {% endif %}
+                                    <td>
+                                        {% if userdata and userdata.email and userdata.avatarconfirm %}
+                                            <img src="{{ userdata.email.email | gravatar(size=50) }}"/>
+                                        {% else %}
+                                            <img src="{{ 'spirean@spirean.com' | gravatar(size=50) }}"/>
+                                        {% endif %}
+                                    </td>
+                                    {% if pm.read %}
+                                        <td>READ</td>
+                                    {% else %}
+                                        <td>UNREAD</td>
+                                    {% endif %}
+                                    <td>
+                                        {% if sent %}
+                                            <a href="{{ url_for('user.view_sent_pm', id=pm.id) }}">
+                                        {% else %}
+                                            <a href="{{ url_for('user.view_pm', id=pm.id) }}">
+                                        {% endif %}
+                                                {{ pm.title }}
+                                            </a>
+                                    </td>
+                                    <td>
+                                        {% if userdata %}
+                                        <a href="{{ url_for('user.profile', user_id=userdata.id) }}">{{ userdata.display }}</a>
+                                        {% else %}
+                                            NONE
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ conv_to_user_time(pm.date) }}</td>
+                                    <td>{{ render_field(select, class='uk-checkbox uk-align-right') }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                {{ messagebox('Nothing Here!', 'No Private Messages have been sent to you.')}}
+            {% endif %}
+        </div>
+        <div>
+            {% if sent %}
+                {{ render_pagination(pages, 'user.view_sent_pms', 'Previous', 'Next') }}
+            {% else %}
+                {{ render_pagination(pages, 'user.view_pms', 'Previous', 'Next') }}
+            {% endif %}
+        </div>
+    {% endblock card_body %}
+    {% block card_footer %}
+        <div class="uk-card-footer">
+            <div class="uk-inline">
+                {{ form.password(class='uk-input', placeholder='Password') | safe }}
+                <button uk-icon="trash" class="uk-form-icon uk-form-icon-flip" type="submit">
+                </button>
+            </div>
+            {{ field_errors(form.password) }}
+        </div>
+    {% endblock card_footer %}
+{% endblock card %}

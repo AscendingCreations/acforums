@@ -1,0 +1,33 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Creating New Thread
+    {% endblock card_title %}
+    {% block card_badge %}
+        <div class="uk-card-badge">
+            <div class="uk-inline">
+                {{ form.password(class='uk-input', placeholder='Password') | safe }}
+                {{ field_errors(form.password) }}
+                <button uk-tooltip="Create Thread" uk-icon="icon: comment" class="uk-form-icon uk-form-icon-flip" type="submit">
+                </button>
+            </div>
+        </div>
+    {% endblock card_badge %}
+    {% block card_body %}
+        {{ render_field(form.title, class='uk-input uk-width-1-1', placeholder='Title') }}
+        {{ render_field(form.text, class='uk-width-1-1', placeholder='message') }}
+        {% if check_right('thread:sticky') %}
+            <label>Sticky {{ form.sticky(class='uk-checkbox', placeholder='Sticky') }}</label>
+        {% endif %}
+    {% endblock card_body %}
+{% endblock card %}

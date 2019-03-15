@@ -1,0 +1,72 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Categorys and Boards
+    {% endblock card_title %}
+    {% block card_body %}
+        <div>
+            <a href="{{ url_for('admin_forum.admin_create_category') }}" class="uk-button uk-button-primary">Create Category</a>
+            <a href="{{ url_for('admin_forum.admin_create_board') }}" class="uk-button uk-button-primary">Create Board</a>
+        </div>
+        {% if cats %}
+            <table class="uk-table uk-table-small uk-table-hover uk-table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Order</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for category in cats %}
+                        <tr>
+                            <td>{{ category.id }}</td>
+                            <td><a href="{{ url_for('admin_forum.admin_edit_category', id=category.id) }}">{{ category.title }}</a></td>
+                            <td>Category</td>
+                            <td>{{ category.order }}</td>
+                            <td><a href="{{ url_for('admin_forum.admin_del_category', id=category.id) }}" class="uk-button uk-button-primary uk-button-small">Delete Category</a></td>
+                        </tr>
+                        {% for board in category.category_boards %}
+                            {% if not board.parent %}
+                            <tr>
+                                <td>{{ board.id }}</td>
+                                <td><a href="{{ url_for('admin_forum.admin_edit_board', id=board.id) }}">{{ board.title }}</a></td>
+                                <td>Board</td>
+                                <td>{{ board.order }}</td>
+                                <td><a href="{{ url_for('admin_forum.admin_del_board', id=board.id) }}" class="uk-button uk-button-primary uk-button-small">Delete Board</a></td>
+                            </tr>
+                            {% for subboard in board.board_boards %}
+                                <tr>
+                                <td>{{ subboard.id }}</td>
+                                <td><a href="{{ url_for('admin_forum.admin_edit_board', id=subboard.id) }}">{{ subboard.title }}</a></td>
+                                <td>Sub Board</td>
+                                <td>{{ subboard.order }}</td>
+                                <td><a href="{{ url_for('admin_forum.admin_del_board', id=subboard.id) }}" class="uk-button uk-button-primary uk-button-small">Delete SubBoard</a></td>
+                            </tr>
+                            {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            {{ messagebox('Nothing Here!', 'No Forums have been created yet.')}}
+        {% endif %}
+        <div class="row gutter">
+            <a href="{{ url_for('admin_forum.admin_create_category') }}" class="uk-button uk-button-primary">Create Category</a>
+            <a href="{{ url_for('admin_forum.admin_create_board') }}" class="uk-button uk-button-primary">Create Board</a>
+        </div>
+    {% endblock card_body %}
+{% endblock card %}

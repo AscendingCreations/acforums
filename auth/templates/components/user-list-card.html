@@ -1,0 +1,56 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Users
+    {% endblock card_title %}
+    {% block card_body %}
+        {% if users.items %}
+            <table class="uk-table uk-table-small uk-table-hover uk-table-striped">
+                <thead>
+                    <tr>
+                        <th>Avatar</th>
+                        <th>Title</th>
+                        <th>Display name</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users.items %}
+                    <tr>
+                        <td>
+                            {% if user.email and user.avatarconfirm %}
+                                <img src="{{ user.email.email | gravatar(size=50) }}"/>
+                            {% else %}
+                                <img src="{{ 'spirean@spirean.com' | gravatar(size=50) }}"/>
+                            {% endif %}
+                        </td>
+                        <td>{{ user.title }}</td>
+                        <td><a href="{{ url_for('user.profile', user_id=user.id) }}">{{ user.display }}</a></td>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+                {{ messagebox('Nothing Here!', 'No users have been created yet.')}}
+            {% endif %}
+            <div>
+                {{ render_pagination(users, 'user.view_users', 'Previous', 'Next') }}
+            </div>
+            <div>
+                <a class="uk-button uk-button-primary uk-align-right" href="{{ url_for('user.invite') }}">Invite</a>
+            </div>
+    {% endblock card_body %}
+{% endblock card %}

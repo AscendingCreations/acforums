@@ -1,0 +1,33 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Delete Profile
+    {% endblock card_title %}
+    {% block card_body %}
+        <form method="POST">
+            {{ form.csrf_token }}
+            <div uk-grid>
+                <div class="row">
+                    Do you really want to Delete Your Profile? This will Delete your Account, Topics, Posts, and Private Messages? 
+                    If you are banned this will only delete Topics, Posts, Private Messages, and all the account information except,
+                    Email, Username and Display Name. You will not be able to login again once this happens. Your account, however will
+                    be fully removed when your ban period runs out.
+                </div>
+                <div class="row">
+                    {{ render_field(form.password, class='uk-input', placeholder='Enter Password To Delete Profile.') }}
+                    <input class="uk-button uk-button-primary" type="submit" value="Delete" tabindex="4"/>
+                </div>
+            </div>
+        </form>
+    {% endblock card_body %}
+{% endblock card %}

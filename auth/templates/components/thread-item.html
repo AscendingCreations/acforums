@@ -1,0 +1,55 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+<div class="uk-flex" uk-grid>
+    <div class="uk-width-1-3">
+        {% if thread.creator.email and thread.creator.avatarconfirm %}
+            <img class="uk-align-left" src="{{ thread.creator.email.email | gravatar(size=50) }}"/>
+        {% else %}
+            <img class="uk-align-left" src="{{ 'spirean@spirean.com' | gravatar(size=50) }}"/>
+        {% endif %} 
+        <div>
+            <a href="{{ url_for('forum.board_view_posts', board_id=board.id, thread_id=thread.id) }}">
+                {{ thread.title }}
+            </a>
+        </div>
+    </div>
+    <div class="uk-width-1-4">
+        <div>
+            <span>Creator: </span>
+            <a href="{{ url_for('user.profile', user_id=thread.creator_id) }}">
+                {{ thread.creator.username }}
+            </a>
+        </div>
+        <div>
+            <span>Posts: </span>{{ thread.post_count }}
+        </div>
+    </div>
+    <div class="uk-width-expand">
+        <div class="uk-flex-row">
+            <div>
+                {% if thread.last.creator.email and thread.last.creator.avatarconfirm %}
+                    <img class="uk-align-left" src="{{ thread.last.creator.email.email | gravatar(size=50) }}"/>
+                {% else %}
+                    <img class="uk-align-left" src="{{ 'spirean@spirean.com' | gravatar(size=50) }}"/>
+                {% endif %}
+            </div>
+            <div>
+                <small>
+                    Last post by {{ thread.last.creator.display }} on {{ conv_to_user_time(thread.last.post_time) }}
+                </small>
+            </div>
+            <div>
+                {% if check_right('forum:mod') or check_right('forum:mod:{thread.board_id}')%}
+                    {{ render_field(select, class='uk-checkbox uk-align-right') }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

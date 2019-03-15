@@ -1,0 +1,81 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% macro render_subboards(board) %}
+	{% if not board.parent %}
+			{% if board.board_boards and viewable %}
+			<div class="row">
+				<div class="category divdown">
+					<span class="caption">{{board.title}}-Sub Boards</span>
+					{% for sub_board in board.board_boards %}
+						{% if board_viewable(sub_board.id) %}
+							<div class="content" style="margin-top: 3px;">
+								{% if sub_board.link %}
+										<div class="overflow-box">
+										<div class="grid gutter">
+											<div class="col-1-4">
+												<board_title> <a href="{{ sub_board.link }}"> {{sub_board.title}} </a></board_title>
+											</div>
+											<div class="col-1-4"/> <div class="col-1-4"/>
+											<div class="col-1-4">
+												<board_title>This is a link to: {{ sub_board.link }}</board_title>
+											</div>
+										</div>
+									</div>
+								{% else %}
+									<div class="overflow-box">
+												<div class="grid gutter">
+													<div class="col-1-4">
+															<board_title> <a href="{{ url_for('forum.view_board', board_id=sub_board.id) }}"> {{sub_board.title}} </a> </board_title>
+													</div>
+													<div class="col-1-4">
+														<div class="mid">
+															<div class="row">
+																<info_label>Threads:</info_label> <info_data> {{sub_board.threads}} </info_data>
+															</div>
+															<div class="row">
+																<info_label>Posts:</info_label> <info_data> {{sub_board.post_count}} </info_data>
+															</div>
+														</div>
+													</div>
+													<div class="col-1-4"></div>
+													<div class="col-1-4">
+														{% if sub_board.last_post %}
+															<div class="col-1-4">
+																{% if sub_board.last_post.creator.email and sub_board.last_post.creator.avatarconfirm %}
+																	<img src="{{ sub_board.last_post.creator.email.email | gravatar(size=50) }}"/>
+																{% else %}
+																	<img src="{{ 'spirean@spirean.com' | gravatar(size=50) }}"/>
+																{% endif %} 
+															</div>
+															<div class="col-1-2">
+																<div class="row">
+																	<a href="{{ url_for('forum.board_view_posts', board_id=sub_board.id,
+																		thread_id=sub_board.last_post.thread.id) }}">
+																	{{ sub_board.last_post.thread.title }}
+																	</a>
+																	Posted: {{ conv_to_user_time(sub_board.last_post.post_time) }}
+																</div>
+																<div class="row"> By: {{ sub_board.last_post.creator.display }} </div>
+															</div>
+														{% else %}
+															<board_title> No Posts </board_title>
+														{% endif %}
+													</div>
+												</div>
+											</div>
+								{% endif %}
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+				</div>
+			{% endif %}
+		{% endif %}
+	{% endmacro %}

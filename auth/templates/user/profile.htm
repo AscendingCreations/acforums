@@ -1,0 +1,41 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends 'base.htm' %}
+
+{% from 'form_utils.htm' import render_field %}
+{% block header %}
+	{{ ckeditor.load_code_theme() }}
+{% endblock %}
+
+{% block nav %}
+	<li><a href="{{ url_for('forum.view_forum') }}">Forums</a></li>
+	<li class="uk-disabled">User Profile</li>
+{% endblock %}
+
+{% block content %}
+	<div uk-grid>
+		<div>
+			{% include "components/profile-nav.html" %}
+		</div>
+		{% if not hidden %}
+			<div class="uk-width-expand">
+				<form method="POST">
+					{{ form.csrf_token }}
+					{% include "components/profile-card.html" %}
+				</form>
+			</div>
+		{% else %}
+			<div class="uk-width-expand">
+				The user has marked their Profile as hidden.
+				You will not be able to view their profile or send Private messages to them
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}

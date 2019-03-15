@@ -1,0 +1,21 @@
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Send PM
+    {% endblock card_title %}
+    {% block card_body %}
+        {{ render_field(form.display, class='uk-input', placeholder='Display')}}
+        {{ render_field(form.title, class='uk-input', placeholder='Title') }}
+        {{ render_field(form.text, class='uk-input', placeholder='Message') }}
+    {% endblock card_body %}
+    {% block card_footer %}
+        <div class="uk-card-footer">
+            <div class="uk-inline uk-align-right">
+                {{ form.password(class='uk-input', placeholder='Password') | safe }}
+                <button uk-tooltip="Send PM" uk-icon="icon: comment" class="uk-form-icon uk-form-icon-flip" type="submit">
+                </button>
+            </div>
+        </div>
+    {% endblock card_footer %}
+{% endblock card %}

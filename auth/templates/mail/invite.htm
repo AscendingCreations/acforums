@@ -1,0 +1,7 @@
+Hi,
+
+You have been invited by {{ user.display }} to sign up for an account. If you want to sign up for an account, you can visit the following link:
+
+{{ url_for('user.sign_up', invitation=invitation, _external=True) }}.
+
+However, if you are not interested in signing up for an account, feel free to ignore and/or delete this e-mail.

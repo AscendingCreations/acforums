@@ -1,0 +1,26 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends 'base.htm' %}
+
+{% from 'form_utils.htm' import render_field, field_errors %}
+
+{% block content %}
+	<div uk-grid>
+		<div class="uk-width-1-5">
+			{% include "components/admin-menu.html" %}
+		</div>
+		<div class="uk-width-expand">
+			<form method="POST">
+				{{ form.csrf_token }}
+				{% include "components/admin-delete-card.html" %}
+			</form>
+		</div>
+	</div>
+{% endblock %}

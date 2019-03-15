@@ -1,0 +1,42 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        {{user.username}}'s Groups
+    {% endblock card_title %}
+    {% block card_body %}
+        {{ form.csrf_token }}
+        <div uk-grid>
+            <div class="uk-width-1-2">
+                <span><b>Users Current Groups</b></span>
+                <ul class="uk-list">
+                    {% for group in user.groups %}
+                        <li>"{{group.name}}"</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                {{ render_field(form.selected, class='uk-select', placeholder='Groups') }}
+            </div>
+            <div>
+                <div class="uk-padding-small uk-padding-remove-left">
+                    <a href="{{ url_for('admin.user_edit', user_id=user.id) }}" class="uk-button uk-button-primary">Edit User</a>
+                    <a href="{{ url_for('admin.admin_user_perms', user_id=user.id) }}" class="uk-button uk-button-primary">Edit Permissions</a>
+                </div>
+                {{ form.password(class='uk-input uk-align-left', placeholder='Password') | safe }}
+                {{ form.remove(class='uk-button uk-button-primary uk-align-right', placeholder='Remove') | safe }}
+                {{ form.add(class='uk-button uk-button-primary uk-align-right', placeholder='Add') | safe }}
+            </div>
+            {{ field_errors(form.password) }}
+        </div>
+    {% endblock card_body %}
+{% endblock card %}

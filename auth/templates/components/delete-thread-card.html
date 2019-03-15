@@ -1,0 +1,29 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Delete Items Selected From - {{board.title}}
+    {% endblock card_title %}
+    {% block card_body %}
+        <div class="row">
+            Do you really want to Delete the selected threads as this will also delete any posts within them as well?
+        </div>
+    {% endblock card_body %}
+    {% block card_footer %}
+        <div class="uk-card-footer">
+            <div class="uk-inline">
+                {{ form.password(class='uk-input', placeholder='Password') | safe }}
+                <button uk-icon="icon: trash" class="uk-form-icon uk-form-icon-flip" type="submit"></button>
+            </div>
+        </div>
+    {% endblock card_footer %}
+{% endblock card %}

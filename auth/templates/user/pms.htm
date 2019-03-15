@@ -1,0 +1,37 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends 'base.htm' %}
+
+{% from 'form_utils.htm' import render_field, field_errors, render_pagination %}
+{% from 'form_utils.htm' import messagebox %}
+
+{% block nav %}
+	<li><a href="{{ url_for('forum.view_forum') }}">Forums</a></li>
+	{% if not sent %}
+		<li class="uk-disabled"><a>Private Messages</a></li>
+	{% else %}
+		<li class="uk-disabled"><a>Sent Private Messages</a></li>
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+<div uk-grid>
+	<div>
+		{% include "components/profile-nav.html" %}
+	</div>
+
+	<div class="uk-width-expand">
+		<form class="uk-form-horizontal" method="POST">
+			{{ form.csrf_token }}
+			{% include "components/private-messages-card.html" %}
+		</form>
+	</div>
+</div>
+{% endblock %}

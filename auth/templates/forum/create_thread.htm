@@ -1,0 +1,32 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends 'base.htm' %}
+
+{% from 'form_utils.htm' import render_field, field_errors %}
+
+{% block header %}
+	{{ ckeditor.load(custom_url=url_for('static', filename='standard/ckeditor.js')) }}
+{% endblock %}
+
+{% block nav %}
+	<li><a href="{{ url_for('forum.view_forum') }}">Forums</a></li>
+	<li><a href="{{ url_for('forum.view_board', board_id=board.id) }}">{{board.title}}</a></li>
+	<li class=><a>Create Thread</a></li>
+{% endblock %}
+
+{% block content %}
+	<form method="POST">
+		{{ form.csrf_token }}
+
+		{% include "components/create-thread-card.html" %}
+		{{ field_errors(form.password) }}
+	</form>
+	{{ ckeditor.config(name='text') }}
+{% endblock %}

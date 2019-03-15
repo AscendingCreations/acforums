@@ -1,0 +1,29 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+<div class="uk-section-secondary uk-padding-small">
+    {% with menu_nav = get_menu() %}
+        {% if menu_nav %}
+            <ul class="uk-subnav uk-subnav-divider">
+                    <li>
+                        {% with user = get_current_user() %}
+                            {% if user.anonymous %}
+                                Hello There,&nbsp;<b>Guest!</b>
+                            {% else %}
+                                Welcome,&nbsp;<b>{{user.display}}!</b>
+                            {% endif %}
+                        {% endwith %}
+                    </li>
+                {% for title, link in menu_nav %}
+                    <li><a href="{{ link }}">{{ title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</div>

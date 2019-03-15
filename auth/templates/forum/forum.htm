@@ -1,0 +1,36 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends 'base.htm' %}
+
+{% from 'form_utils.htm' import render_field %}
+{% from 'form_utils.htm' import messagebox %}
+
+{% block nav %}
+	<li class="uk-disabled"><a>Forums</a></li>
+{% endblock %}
+
+{% block content %}
+	{% if categories and can_see_boards %}
+		{% for category in categories %}
+			{% if category_viewable(category.id) %}
+				{% if category.category_boards %}
+					{% include "components/category-card.html" %}
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		<div class="uk-margin-large-top">
+			{% include "components/who-is-online-card.html" %}
+		</div>
+	{% else %}
+		{{ messagebox('Nothing Here!',
+			'No Categories or Boards have been created or you do not have permissions to view Anything. =P')}}
+	{% endif %}
+		
+{% endblock %}

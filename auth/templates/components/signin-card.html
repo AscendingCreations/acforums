@@ -1,0 +1,44 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Sign in
+    {% endblock card_title %}
+    {% block card_body %}
+        <div uk-grid>
+            <div class="uk-width-1-1">
+                {{ render_field(form.id, class='uk-input', placeholder='user@example.com') }}
+            </div>
+
+            <div class="uk-width-1-1">
+                <p class="uk-align-right"><a href="#">Don't have an account yet?</a></p>
+            </div>
+
+            <div class="uk-width-1-1">
+                {{ render_field(form.password, class='uk-input', placeholder='Password') }}
+            </div>
+
+            <div class="uk-width-1-1">
+                <p class="uk-align-right"><a href="#">Forgot your password?</a></p>
+            </div>
+
+            <div class="uk-width-1-1" uk-grid>
+                <div class="uk-width-1-2">
+                    {{ render_checkbox(form.remember_me, class='uk-checkbox') }}
+                </div>
+                <div class="uk-width-1-2">
+                    <input class="uk-button uk-button-primary uk-align-right" type="submit" value="Sign In" tabindex="4" />
+                </div>
+            </div>
+        </div>
+    {% endblock card_body %}
+{% endblock card %}

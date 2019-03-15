@@ -1,0 +1,25 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        <span class="uk-card-title">Who is Online</span>
+    {% endblock card_title %}
+    {% block card_body %}
+        {% if online %}
+            {% for online_user in online %}
+                <a href="{{ url_for('user.profile', user_id=online_user.id) }}">{{ online_user.display }}</a>,
+            {% endfor %}
+        {% else %}
+            No One is Online.
+        {% endif %}
+    {% endblock card_body %}
+{% endblock card %}

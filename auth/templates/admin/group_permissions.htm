@@ -1,0 +1,59 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends 'base.htm' %}
+
+{% from 'form_utils.htm' import render_field %}
+
+{% block content %}
+<div class="row">
+	{% with nav = get_admin_nav() %}
+	{% if nav %}
+		<div class="col-1-5">
+			{% for title, subnav in nav %}
+			<ul class="sidenav">
+				<li class="caption">{{ title }}</li>
+
+				{% for title, link in subnav %}
+					<li><a href="{{ link }}">{{ title }}</a></li>
+				{% endfor %}
+			</ul>
+			{% endfor %}
+		</div>
+	{% endif %}
+{% endwith %}
+		<div class="col-4-5">
+			<div class="card">
+				<span class="caption">Current Permissions list</span>
+				<div class="content">
+					<form method="POST">
+						{{ form.csrf_token }}
+						<div class="row">
+								'forum:view','forum:create','forum:edit','forum:delete',
+								'forum:post','forum:reply','forum:poll','forum:mod',
+								'user:view','user:create','user:edit','user:delete',
+								'user:invite','user:permissions', 'user:like',
+								'user:warn','user:ban','user:invisible','user:online',
+								'user:groups','pm:view','pm:send','mail:send',
+								'mail:mass','admin:view','admin:warn','admin:change',
+								'admin:userview','log:view','log:delete','group:view',
+								'group:create','group:edit','group:delete',
+								'shoutbox:view','shoutbox:post','shoutbox:edit',
+								'shoutbox:remove','thread:view','thread:create',
+								'thread:edit','thread:remove','thread:reply',
+								'thread:like','thread:attach','thread:sticky',
+								'thread:move','thread:annoucements',
+								'category:view'		 
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+</div>
+{% endblock %}

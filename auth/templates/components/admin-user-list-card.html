@@ -1,0 +1,85 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        User List
+    {% endblock card_title %}
+    {% block card_body %}
+        <a href="{{ url_for('admin.create_user') }}" class="uk-button uk-button-primary">Create User</a>
+        {% if users %}
+        <div class="uk-overflow-auto">
+            <table class="uk-table-hover uk-table-striped uk-table-small">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Avatar</th>
+                        <th>Title</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Display name</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th class="uk-table-expand">Edit Permissions</th>
+                        <th class="uk-table-expand">Edit Group</th>
+                        <th>Selection</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for select, user in users %}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td>
+                                {% if user.email and user.avatarconfirm %}
+                                    <img src="{{ user.email.email | gravatar(size=50) }}"/>
+                                {% else %}
+                                    <img src="{{ 'spirean@spirean.com' | gravatar(size=50) }}"/>
+                                {% endif %}
+                            </td>
+                            <td>{{ user.title }}</td>
+                            <td><a href="{{ url_for('admin.user_edit', user_id=user.id) }}">{{ user.username }}</a></td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.display }}</td>
+                            <td>{{ user.first_name }}</td>
+                            <td>{{ user.last_name }}</td>
+                            <td>
+                                <a href="{{ url_for('admin.admin_user_perms', user_id=user.id) }}" class="uk-button uk-button-primary uk-button-small">
+                                    <span uk-icon="icon: lock"></span>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('admin.admin_user_group', user_id=user.id) }}" class="uk-button uk-button-primary uk-button-small">
+                                    <span uk-icon="icon: users"></span>
+                                </a>
+                            </td>
+                            <td>{{ render_field(select, class='uk-checkbox') }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            {{ messagebox('Nothing Here!', 'No users have been created yet.')}}
+        {% endif %}
+    {% endblock card_body %}
+    {% block card_footer %}
+        <div class="uk-card-footer">
+            <div class="uk-align-left">
+                {{ render_pagination(pages, 'admin.admin_view_users', 'Previous', 'Next') }}
+            </div>
+            <div class="uk-align-right uk-inline">
+                {{ form.password(class='uk-input', placeholder='Password') | safe }}
+                <button uk-tooltip="Delete" uk-icon="icon: trash" class="uk-form-icon uk-form-icon-flip" type="submit"></button>
+            </div>
+        </div>
+        {{ field_errors(form.password) }}
+    {% endblock card_footer %}
+{% endblock card %}

@@ -1,0 +1,66 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Your Profile
+    {% endblock card_title %}
+    {% block card_body %}
+        <div>
+            <div>
+                {% if user.email and user.avatarconfirm %}
+                    <img src="{{ user.email.email | gravatar(size=50) }}"/>
+                {% else %}
+                    <img src="{{ 'spirean@spirean.com' | gravatar(size=50) }}"/>
+                {% endif %}
+            </div>
+            <div class="uk-grid" uk-grid>
+                <div class="uk-width-1-2">
+                    <div><b>Display:</b></div>
+                    {% if user.title %}
+                    <div><b>Title:</b></div>
+                    {% endif %}
+                    {% if user.first_name %}
+                    <div><b>First Name:</b></div>
+                    {% endif %}
+                    <div><b>Last Name:</b></div>
+                    <div><b>Last Active:</b></div>
+                    <div><b>Member Since:</b></div>
+                    <div><b>Posts:</b></div>
+                    <div><b>Signature:</b></div>
+                </div>
+                <div class="uk-width-1-2">
+                    <div><span>{{user.display}}</span></div>
+                    {% if user.title %}
+                    <div><span>{{user.title}}</span></div>
+                    {% endif %}
+                    {% if user.first_name %}
+                    <div><span>{{user.first_name}}</span></div>
+                    {% endif %}
+                    {% if user.last_name %}
+                    <div><span>{{user.last_name}}</span></div>
+                    {% endif %}
+                    <div><span>{{conv_to_user_time(user.lastactive)}}</span></div>
+                    <div><span>{{conv_to_user_time(user.regdate)}}</span></div>
+                    <div><span>{{user.postnum}}</span></div>
+                    <div><span>{{user.signature|safe}}</span></div>
+                </div>
+            </div>
+            <div>
+                {% with current_user = get_current_user() %}
+                    {% if current_user.id != user.id %}
+                        {{ form.pm(class='uk-button uk-button-primary uk-align-right', placeholder='Private Message') | safe }}
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    {% endblock card_body %}
+{% endblock card %}

@@ -1,0 +1,32 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        {{board.title}} Threads
+    {% endblock card_title %}
+    {% block card_badge %}
+        <div class="uk-card-badge">
+            <a href="{{ url_for('forum.board_create_threads', board_id=board.id) }}" 
+                class="uk-button uk-button-secondary uk-align-right">
+                Create Thread
+            </a>
+        </div>
+    {% endblock card_badge %}
+    {% block card_body %}
+		{% for select, thread in threads %}
+			{% include "components/thread-item.html" %}
+			{% if not loop.last %}
+				<hr class="uk-divider-icon" />
+			{% endif %}
+		{% endfor %}
+    {% endblock card_body %}
+{% endblock card %}

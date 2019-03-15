@@ -1,0 +1,62 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% if board.link %}
+    <div uk-grid>
+        <div>
+            <a href="{{ board.link }}">{{board.title}}</a>
+        </div>
+        <div>
+            This is a link to: {{board.link}}
+        </div>
+    </div>
+{% else %}
+    <div class="uk-flex" uk-grid>
+        <div class="uk-width-1-3">
+            <a class="uk-link-heading" href="{{ url_for('forum.view_board', board_id=board.id) }}">
+                {{board.title}}
+            </a>
+        </div>
+        <div class="uk-width-1-3 uk-text-meta">
+            <div>
+                <span class="uk-text-capitalize">Threads: {{board.threads}} </span>
+            </div>
+            <div>
+                <span class="uk-text-capitalize">Posts: {{board.post_count}}</span>
+            </div>
+        </div>
+        <div></div>
+        <div class="uk-width-1-3 uk-flex" uk-grid>
+            {% if board.last_post %}
+                <div>
+                    {% if board.last_post.creator.email and board.last_post.creator.avatarconfirm %}
+                        <img class="uk-align-left" src="{{ board.last_post.creator.email.email | gravatar(size=50) }}"/>
+                    {% else %}
+                        <img class="uk-align-left" src="{{ 'spirean@spirean.com' | gravatar(size=50) }}"/>
+                    {% endif %}
+                    <div>
+                        <div class="uk-flex">
+                            <a href="{{ url_for('forum.board_view_posts', board_id=board.id, thread_id=board.last_post.thread.id) }}">
+                                {{ board.last_post.thread.title }}
+                            </a>
+                        </div>
+                        <div class="uk-flex">
+                            <small>
+                                {{ conv_to_user_time(board.last_post.post_time) }}
+                                by {{ board.last_post.creator.display }}
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                    <span> No Posts </span>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}

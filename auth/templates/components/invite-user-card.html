@@ -1,0 +1,25 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        Invite for Sign Up
+    {% endblock card_title %}
+    {% block card_body %}
+        <div>
+            {{ render_field(form.email, class='uk-input', placeholder='user@example.com') }}
+
+            <div>
+                <input class="uk-button uk-button-primary uk-align-right" type="submit" value="Send" tabindex="4" />
+            </div>
+        </div>
+    {% endblock card_body %}
+{% endblock card %}

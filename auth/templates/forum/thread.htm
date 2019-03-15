@@ -1,0 +1,34 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends 'base.htm' %}
+
+{% from 'form_utils.htm' import render_field, render_thread_pagination, field_errors %}
+{% from 'form_utils.htm' import messagebox %}
+
+{% block header %}
+	{{ ckeditor.load_code_theme() }}
+{% endblock %}
+
+{% block nav %}
+	<li><a href="{{ url_for('forum.view_forum') }}">Forums</a></li>
+	{% if thread %}
+		<li>
+			<a href="{{ url_for('forum.view_board', board_id=board_id) }}">{{thread.board.title}}</a>
+		</li>
+		<li class="uk-disabled"><a>{{thread.title}}</a></li>
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+	<form method="POST">
+		{{ form.csrf_token }}
+		{% include "components/thread-posts-card.html" %}
+	</form>
+{% endblock %}

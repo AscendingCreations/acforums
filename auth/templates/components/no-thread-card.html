@@ -1,0 +1,27 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        {{board.title}} Threads
+    {% endblock card_title %}
+    {% block card_badge %}
+        <div class="uk-card-badge">
+            <a href="{{ url_for('forum.board_create_threads', board_id=board.id) }}" 
+                class="uk-button uk-button-secondary uk-align-right">
+                Create Thread
+            </a>
+        </div>
+    {% endblock card_badge %}
+    {% block card_body %}
+		{{ messagebox('No Threads!', 'No Threads Have been created yet.')}}
+    {% endblock card_body %}
+{% endblock card %}

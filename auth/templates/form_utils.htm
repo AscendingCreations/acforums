@@ -1,0 +1,127 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - S.J.R. van Schaik <stephan@synkhronix.com>
+-->
+{% macro render_field(field) %}
+	{% if field.description %}
+	<div class="uk-width-1-2">
+		<dl>
+			<dt>{{ field.label.text }}</dt>
+			<dd>{{ field.description }}</dd>
+		</dl>
+	</div>
+
+	<div class="uk-width-1-2">
+	{% endif %}
+		{{ field.label }}
+		{{ field(**kwargs) | safe }}
+	{% if field.description %}
+	</div>
+	{% endif %}
+
+	{% if field.errors %}
+		<div>
+			{% for error in field.errors %}
+				<div class="uk-alert error">{{ error }}</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+{% endmacro %}
+
+{% macro field_errors(field) %}
+	{% if field.errors %}
+		<div class="row">
+			{% for error in field.errors %}
+				<div class="uk-alert error">{{ error }}</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+{% endmacro %}
+
+{% macro render_checkbox(field) %}
+	<label for="{{ field.id }}">
+		{{ field(**kwargs) | safe }}
+		<span class="label">{{ field.label.text }}</span>
+	</label>
+{% endmacro %}
+
+{% macro render_pagination(pagination, endpoint, prev, next) %}
+	<ul class="uk-pagination">
+		{% if pagination.has_prev %}
+			<li><a href="{{ url_for(endpoint, page=pagination.prev_num) }}">{{prev}}</a></li>
+		{% endif %}
+		{% for page in pagination.iter_pages(left_edge=2, left_current=1, right_current=5, right_edge=1) %}
+			{% if page %}
+				{% if page != pagination.page %}
+					<li><a href="{{ url_for(endpoint, page=page) }}">{{ page }}</a></li>
+				{% elif pagination.pages > 1 %}
+					<li><div><strong>{{ page }}</strong></div></li>
+				{% endif %}
+			{% else %}
+				<li><span>…</span></li>
+			{% endif %}
+		{% endfor %}
+		{% if pagination.has_next %}
+			<li><a href="{{ url_for(endpoint, page=pagination.next_num) }}">{{next}}</a></li>
+		{% endif %}
+	</ul>
+{% endmacro %}
+
+{% macro render_board_pagination(pagination, board_id, endpoint, prev, next) %}
+	<ul class="uk-pagination">
+		{% if pagination.has_prev %}
+			<li><a href="{{ url_for(endpoint, page=pagination.prev_num, board_id=board_id) }}">{{prev}}</a></li>
+		{% endif %}
+		{% for page in pagination.iter_pages(left_edge=2, left_current=1, right_current=5, right_edge=1) %}
+			{% if page %}
+				{% if page != pagination.page %}
+					<li><a href="{{ url_for(endpoint, page=page, board_id=board_id) }}">{{ page }}</a></li>
+				{% elif pagination.pages > 1 %}
+					<li><div class="button"><strong>{{ page }}</strong></div></li>
+				{% endif %}
+			{% else %}
+				<li><span>…</span></li>
+			{% endif %}
+		{% endfor %}
+		{% if pagination.has_next %}
+			<li><a href="{{ url_for(endpoint, page=pagination.next_num, board_id=board_id) }}">{{next}}</a></li>
+		{% endif %}
+	</ul>
+{% endmacro %}
+
+{% macro render_thread_pagination(pagination, board_id, thread_id, endpoint, prev, next) %}
+	<ul class="uk-pagination">
+		{% if pagination.has_prev %}
+			<li>
+				<a href="{{ url_for(endpoint, page=pagination.prev_num, board_id=board_id, thread_id=thread_id) }}">
+					{{prev}}
+				</a>
+			</li>
+		{% endif %}
+		{% for page in pagination.iter_pages(left_edge=2, left_current=1, right_current=5, right_edge=1) %}
+			{% if page %}
+				{% if page != pagination.page %}
+					<li><a href="{{ url_for(endpoint, page=page, board_id=board_id, thread_id=thread_id) }}">{{ page }}</a></li>
+				{% elif pagination.pages > 1 %}
+					<li><div><strong>{{ page }}</strong></div></li>
+				{% endif %}
+			{% else %}
+				<li><span>…</span></li>
+			{% endif %}
+		{% endfor %}
+		{% if pagination.has_next %}
+			<li><a  href="{{ url_for(endpoint, page=pagination.next_num, board_id=board_id, thread_id=thread_id) }}">{{next}}</a></li>
+		{% endif %}
+	</ul>
+{% endmacro %}
+
+{% macro messagebox(caption, message) %}
+	<p>
+		{{ message }}
+	</p>
+{% endmacro %}

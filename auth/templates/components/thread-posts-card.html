@@ -1,0 +1,51 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        {{thread.title}}
+        <div class="uk-card-badge">
+            <a href="{{ url_for('forum.board_create_post', board_id=board_id, thread_id=thread.id) }}" 
+                class="uk-button uk-button-secondary uk-align-right">
+                Create Post
+            </a>
+        </div>
+    {% endblock card_title %}
+    {% block card_body %}
+        {% if posts %}
+			{% for select, post in posts %}
+				{% include "components/post-item.html" %}
+				{% if not loop.last %}
+					<hr class="uk-divider-icon" />
+				{% endif %}
+			{% endfor %}
+		{% else %}
+			{{ messagebox('Nothing Here!',
+				'Nothing has been created or you do not have permissions to view Anything.')}}
+		{% endif %}
+    {% endblock card_body %}
+    {% block card_footer %}
+        <div class="uk-card-footer">
+            <div class="uk-align-left">
+                {{ render_thread_pagination(pages, board_id, thread.id, 'forum.board_view_posts', 'Previous', 'Next') }}
+            </div>
+                {% if check_right('thread:remove') or check_right('thread:remove:{thread.board_id}')%}
+                    <div class="uk-align-right">
+                        <div class="uk-inline">
+                            {{ form.password(class='uk-input', placeholder='Password') | safe }}
+                            <button uk-tooltip="Delete" uk-icon="icon: trash" class="uk-form-icon uk-form-icon-flip" type="submit"></button>
+                            {{ field_errors(form.password) }}
+                        </div>
+                    </div>
+				{% endif %}
+        </div>
+    {% endblock card_footer %}
+{% endblock card %}

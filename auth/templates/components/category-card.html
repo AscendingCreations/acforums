@@ -1,0 +1,28 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        {{category.title}}
+    {% endblock card_title %}
+    {% block card_body %}
+        {% for board in category.category_boards %}
+        {% if not board.parent %}
+            {% if board_viewable(board.id) %}
+                {% include "components/board-item.html" %}
+				{% if not loop.last %}
+					<hr class="uk-divider-icon" />
+				{% endif %}
+            {% endif %}
+        {% endif %}
+        {% endfor %}
+    {% endblock card_body %}
+{% endblock card %}

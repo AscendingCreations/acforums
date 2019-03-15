@@ -1,0 +1,79 @@
+<!--
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+ Author(s):
+  - Andrew Wheeler <lordsatin@hotmail.com>
+  - Alex Lopez  <kasvaca@gmail.com>
+-->
+{% extends "components/card.html" %}
+
+{% block card %}
+    {% block card_title %}
+        <span class="caption">Your Profile</span>
+    {% endblock card_title %}
+    {% block card_body %}
+        <ul style="margin-top: -41px;" class="uk-tab-bottom uk-padding-remove" uk-tab>
+            <li class="uk-active"><a href="#">Details</a></li>
+            <li><a href="#">Signature</a></li>
+            <li><a href="#">Privacy</a></li>
+        </ul>
+        <ul class="uk-switcher">
+            <li>
+                <div uk-grid>
+                    <div class="uk-width-1-2">
+                        {% if user.email and user.avatarconfirm %}
+                            <img src="{{ user.email.email | gravatar(size=50)}}"/>
+                        {% else %}
+                            <img src="{{ 'spirean@spirean.com' | gravatar(size=50) }}"/>
+                        {% endif %}
+                    </div>
+                    <div class="uk-width-1-2">
+                        <p>
+                            We only use a 3rd party called Gravatar for our Avatars.
+                            If you would like to change your avatar please login or 
+                            create an account at <a href="https://en.gravatar.com/connect/">Gravatar.com</a>.
+                            If you do not have an account an avatar will be randomly generated.
+                        </p>
+                    </div>
+                    {{ render_field(form.avatarconfirm, class='uk-checkbox', placeholder='avatar confirm') }}
+                    {{ render_field(form.username, class='uk-input', placeholder='User name', disabled=True) }}
+                    {{ render_field(form.email, class='uk-input', placeholder='user@example.com', disabled=True) }}
+                    {{ render_field(form.loginconfirm, class='uk-checkbox', placeholder='login confirm') }}
+                    {{ render_field(form.display, class='uk-input', placeholder='Display name') }}
+                    {{ render_field(form.displayconfirm, class='uk-checkbox', placeholder='display confirm') }}
+                    {{ render_field(form.title, class='uk-input', placeholder='Title') }}
+                    {{ render_field(form.titleconfirm, class='uk-checkbox', placeholder='title confirm') }}
+                    {{ render_field(form.timezone, class='uk-select', placeholder='Timezone') }}
+                    {{ render_field(form.first_name, class='uk-input', placeholder='First name') }}
+                    {{ render_field(form.last_name, class='uk-input', placeholder='Last name') }}
+                    {{ render_field(form.nameconfirm, class='uk-checkbox', placeholder='name confirm') }}
+                </div>
+            </li>
+            <li>
+                <div uk-grid>
+                    {{ render_field(form.signature, class='uk-input', placeholder='Signature') }}
+                    {{ render_field(form.sigconfirm, class='uk-checkbox', placeholder='signature confirm') }}
+                </div>
+            </li>
+            <li>
+                <div uk-grid>
+                    {{ render_field(form.new_password, type='password', class='uk-input', placeholder='New password') }}
+                    {{ render_field(form.confirm_password, type='password', class='uk-input', placeholder='Confirm password') }}
+                    {{ render_field(form.hideprofile, class='uk-checkbox', placeholder='hide profile') }}
+                </div>
+            </li>
+        </ul>
+    {% endblock card_body %}
+    {% block card_footer %}
+        <div class="uk-card-footer uk-flex">
+            <div uk-grid>
+                {{ render_field(form.old_password, type='password', class='uk-input', placeholder='Password') }}
+                <div class="uk-width-1-1">
+                    <input class="uk-button uk-button-primary uk-align-right" type="submit" value="Update" />
+                </div>
+            </div>
+        </div>
+    {% endblock card_footer %}
+{% endblock card %}

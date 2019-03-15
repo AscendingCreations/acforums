@@ -1,0 +1,13 @@
+#!python3
+
+import click
+from flask.cli import FlaskGroup
+
+from auth import create_app
+
+@click.group(cls=FlaskGroup, create_app=create_app)
+def cli():
+	pass
+
+if __name__ == '__main__':
+	cli()

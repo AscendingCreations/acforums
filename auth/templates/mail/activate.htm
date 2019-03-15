@@ -1,0 +1,7 @@
+Hi,
+
+To Activate your account {{ user.display }}, visit the following link:
+
+{{ url_for('user.activate', activation=activation, _external=True) }}
+
+However, if you did not sign up for the account {{ user.display }}, feel free to ignore, delete this e-mail and/or report this account to admin@spirean.com.
