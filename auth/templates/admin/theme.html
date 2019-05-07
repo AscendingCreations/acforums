@@ -1,0 +1,64 @@
+{% extends 'base.htm' %}
+
+{% from 'form_utils.htm' import render_field, field_errors, render_pagination %}
+{% from 'form_utils.htm' import messagebox %}
+
+{% macro sass_list(list) -%}
+    {% for key, val in list.items()  %}
+        {{caller(key, val)}}
+    {% endfor %}
+{%- endmacro %}
+
+{% print(sass_variables) %}
+
+{% block content %}
+	<form method="POST" onsubmit="event.preventDefault()">
+		<div uk-grid>
+			<div class="uk-width-1-5">
+				{% include "components/admin-menu.html" %}
+			</div>
+			<div class="uk-width-expand">
+				<div class="uk-card-body">
+					<ul class="uk-nav">
+						{% call(key, val) sass_list(sass_variables) %}
+							<li class="uk-flex">
+								<span class="uk-width-1-2">{{key}}</span>
+								<div class="uk-width-1-2">
+									<input
+										id="{{key|safe}}-color"
+										class="uk-align-right"
+										type="color"
+										value="{{val}}"
+										onchange="updateValue('{{key|safe}}')"
+									/>
+								</div>
+							</li>
+						{% endcall %}
+					</ul>
+					<li>
+						<button onclick="saveSass()" class="uk-button uk-button-primary">
+							Save
+						</button>
+					</li>
+				</div>
+			</div>
+		</div>
+	</form>
+	<script>
+        var sass_variables = {{sass_variables|safe}};
+
+        function updateValue(key) {
+			var value = document.getElementById(key+'-color').value;
+            sass_variables[key] = value;
+            console.log(sass_variables[key]);
+        }
+
+        function saveSass() {
+			console.log(sass_variables);
+            fetch('/admin/theme', {
+                method: 'PUT',
+                body: JSON.stringify(sass_variables)
+            });
+        }
+    </script>
+{% endblock %}

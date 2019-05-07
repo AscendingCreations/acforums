@@ -24,7 +24,7 @@
         <div>
             <span>Creator: </span>
             <a href="{{ url_for('user.profile', user_id=thread.creator_id) }}">
-                {{ thread.creator.username }}
+                {{ thread.creator.display }}
             </a>
         </div>
         <div>

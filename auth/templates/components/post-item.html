@@ -18,7 +18,7 @@
         </div>
         <div class="uk-width-expand">
             <h4 class="uk-comment-title uk-margin-remove">
-                <a class="uk-link-reset" href="{{ url_for('user.profile', user_id=post.creator_id) }}">{{ post.creator.username }}</a>
+                <a class="uk-link-reset" href="{{ url_for('user.profile', user_id=post.creator_id) }}">{{ post.creator.display }}</a>
             </h4>
             <ul class="uk-comment-meta uk-subnav uk-margin-remove-top">
                 <li>{{ post.creator.postnum }} Posts</li>
@@ -27,7 +27,7 @@
                     <a href="{{ url_for('forum.board_reply_post', board_id=board_id, thread_id=thread.id, post_id=post.id) }}"
                     class="uk-button uk-button-text"><span uk-icon="reply"></span> Reply</a>
                 </li>
-                {% if post.creator.id == user.id %}
+                {% if post.creator.id == user.id  or check_right('forum:mod') or check_right('forum:mod:{}'.format(thread.board_id))%}
                     <li>
                         <a href="{{ url_for('forum.board_edit_post', board_id=board_id, thread_id=thread.id, post_id=post.id) }}"
                         class="uk-button uk-button-text"><span uk-icon="pencil"></span> Edit</a>

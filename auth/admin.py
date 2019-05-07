@@ -12,6 +12,7 @@ from flask import current_app, url_for
 from flask_login import current_user
 from flask_authz import rights
 import pendulum
+import json
 
 from .models import db, authz, Group, User, Email, UserPermission
 from .models import Log, GroupPermission, Thread, Post, Warning, Board
@@ -21,6 +22,7 @@ from .forms import GroupCreateForm, InfoForm
 from .utils import mail, parse_token, sign_token
 from .log import create_log
 from sqlalchemy import func
+from .services import YamlCompiler, ScssCompiler
 from .tasks import send_async_email, delete_user, recount_all_boards_posts
 from .tasks import recount_all_users_posts, reset_user_terms, reset_user_privacy
 
@@ -53,6 +55,22 @@ def info():
 	
 	return render_template('admin/info.htm', form=form, users=users, posts=posts,
 		threads=threads, warnings=warnings, logs=logs, newest=newest)
+
+@admin_view.route('/admin/theme', methods=('GET', 'POST', 'PUT'))
+@authz.requires(rights.permission(Group, 'admin:view'), methods=('GET' 'POST'))
+@authz.requires(rights.permission(Group, 'forum:edit'), methods=('GET', 'POST', 'PUT'))
+def admin_theme():
+	if request.method == 'PUT':
+		theme_path = 'auth/theme/theme.yaml'
+		data = json.loads(request.data.decode('utf-8'))
+		YamlCompiler.write_file(theme_path, 'w', data)
+		compiler = ScssCompiler(theme_path)
+		sass = compiler.compile('auth/static/uikit/scss/index.scss')
+		compiler.write_file(sass, 'auth/static/css/uikit.css')
+		return "success"
+	else:
+		sass_variables = YamlCompiler.read_file('auth/theme/theme.yaml')
+		return render_template('admin/theme.html', sass_variables=sass_variables)
 
 @admin_view.route('/admin/user_edit/<int:user_id>', methods=('GET', 'POST'))
 @authz.requires(rights.all_of(

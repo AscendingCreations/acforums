@@ -1,0 +1,1094 @@
+<NotepadPlus>
+    <Project name="acforums">
+        <Folder name="auth">
+            <Folder name="api">
+                <File name="auth\api\api.py" />
+                <File name="auth\api\__init__.py" />
+            </Folder>
+            <Folder name="cli">
+                <File name="auth\cli\db.py" />
+                <File name="auth\cli\user.py" />
+                <File name="auth\cli\__init__.py" />
+            </Folder>
+            <Folder name="forms">
+                <File name="auth\forms\admin.py" />
+                <File name="auth\forms\forum.py" />
+                <File name="auth\forms\log.py" />
+                <File name="auth\forms\user.py" />
+                <File name="auth\forms\utils.py" />
+                <File name="auth\forms\__init__.py" />
+            </Folder>
+            <Folder name="models">
+                <File name="auth\models\forum.py" />
+                <File name="auth\models\logs.py" />
+                <File name="auth\models\model.py" />
+                <File name="auth\models\user.py" />
+                <File name="auth\models\__init__.py" />
+            </Folder>
+            <Folder name="services">
+                <File name="auth\services\scss_compiler.py" />
+                <File name="auth\services\yaml_compiler.py" />
+                <File name="auth\services\__init__.py" />
+            </Folder>
+            <Folder name="static">
+                <Folder name="css">
+                    <File name="auth\static\css\grid.css" />
+                    <File name="auth\static\css\main.css" />
+                    <File name="auth\static\css\markdown.css" />
+                    <File name="auth\static\css\ui.css" />
+                    <File name="auth\static\css\uikit.css" />
+                    <File name="auth\static\css\vim.css" />
+                </Folder>
+                <Folder name="img">
+                    <File name="auth\static\img\back.png" />
+                    <File name="auth\static\img\down.png" />
+                    <File name="auth\static\img\logo.png" />
+                </Folder>
+                <Folder name="standard">
+                    <Folder name="adapters">
+                        <File name="auth\static\standard\adapters\jquery.js" />
+                    </Folder>
+                    <Folder name="lang">
+                        <File name="auth\static\standard\lang\de.js" />
+                        <File name="auth\static\standard\lang\en.js" />
+                        <File name="auth\static\standard\lang\es.js" />
+                        <File name="auth\static\standard\lang\fr.js" />
+                        <File name="auth\static\standard\lang\ja.js" />
+                        <File name="auth\static\standard\lang\ko.js" />
+                        <File name="auth\static\standard\lang\zh-cn.js" />
+                        <File name="auth\static\standard\lang\zh.js" />
+                    </Folder>
+                    <Folder name="plugins">
+                        <Folder name="a11yhelp">
+                            <Folder name="dialogs">
+                                <Folder name="lang">
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\af.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\ar.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\az.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\bg.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\ca.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\cs.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\cy.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\da.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\de-ch.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\de.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\el.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\en-au.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\en.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\eo.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\es-mx.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\es.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\et.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\eu.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\fa.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\fi.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\fo.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\fr.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\gl.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\gu.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\he.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\hi.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\hr.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\hu.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\id.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\it.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\ja.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\km.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\ko.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\ku.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\lt.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\lv.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\mk.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\mn.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\nb.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\nl.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\no.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\oc.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\pl.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\pt.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\ro.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\ru.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\si.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\sk.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\sl.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\sq.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\sr.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\sv.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\th.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\tr.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\tt.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\ug.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\uk.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\vi.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\zh.js" />
+                                    <File name="auth\static\standard\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+                                </Folder>
+                                <File name="auth\static\standard\plugins\a11yhelp\dialogs\a11yhelp.js" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="about">
+                            <Folder name="dialogs">
+                                <Folder name="hidpi">
+                                    <File name="auth\static\standard\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+                                </Folder>
+                                <File name="auth\static\standard\plugins\about\dialogs\about.js" />
+                                <File name="auth\static\standard\plugins\about\dialogs\logo_ckeditor.png" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="autocorrect">
+                            <Folder name="dialogs">
+                                <File name="auth\static\standard\plugins\autocorrect\dialogs\options.js" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="clipboard">
+                            <Folder name="dialogs">
+                                <File name="auth\static\standard\plugins\clipboard\dialogs\paste.js" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="codesnippet">
+                            <Folder name="dialogs">
+                                <File name="auth\static\standard\plugins\codesnippet\dialogs\codesnippet.js" />
+                            </Folder>
+                            <Folder name="icons">
+                                <Folder name="hidpi">
+                                    <File name="auth\static\standard\plugins\codesnippet\icons\hidpi\codesnippet.png" />
+                                </Folder>
+                                <File name="auth\static\standard\plugins\codesnippet\icons\codesnippet.png" />
+                            </Folder>
+                            <Folder name="lang">
+                                <File name="auth\static\standard\plugins\codesnippet\lang\ar.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\az.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\bg.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\ca.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\cs.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\da.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\de-ch.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\de.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\el.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\en-au.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\en-gb.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\en.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\eo.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\es-mx.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\es.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\et.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\eu.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\fa.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\fi.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\fr-ca.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\fr.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\gl.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\he.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\hr.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\hu.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\id.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\it.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\ja.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\km.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\ko.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\ku.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\lt.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\lv.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\nb.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\nl.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\no.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\oc.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\pl.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\pt-br.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\pt.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\ro.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\ru.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\sk.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\sl.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\sq.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\sv.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\th.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\tr.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\tt.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\ug.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\uk.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\vi.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\zh-cn.js" />
+                                <File name="auth\static\standard\plugins\codesnippet\lang\zh.js" />
+                            </Folder>
+                            <Folder name="lib">
+                                <Folder name="highlight">
+                                    <Folder name="styles">
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\arta.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\ascetic.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\atelier-dune.dark.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\atelier-dune.light.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\atelier-forest.dark.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\atelier-forest.light.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\atelier-heath.dark.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\atelier-heath.light.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\atelier-lakeside.dark.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\atelier-lakeside.light.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\atelier-seaside.dark.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\atelier-seaside.light.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\brown_paper.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\brown_papersq.png" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\dark.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\default.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\docco.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\far.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\foundation.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\github.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\googlecode.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\idea.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\ir_black.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\magula.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\mono-blue.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\monokai.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\monokai_sublime.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\obsidian.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\paraiso.dark.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\paraiso.light.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\pojoaque.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\pojoaque.jpg" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\railscasts.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\rainbow.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\school_book.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\school_book.png" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\solarized_dark.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\solarized_light.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\sunburst.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\tomorrow-night-blue.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\tomorrow-night-bright.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\tomorrow-night-eighties.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\tomorrow-night.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\tomorrow.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\vs.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\xcode.css" />
+                                        <File name="auth\static\standard\plugins\codesnippet\lib\highlight\styles\zenburn.css" />
+                                    </Folder>
+                                    <File name="auth\static\standard\plugins\codesnippet\lib\highlight\CHANGES.md" />
+                                    <File name="auth\static\standard\plugins\codesnippet\lib\highlight\highlight.pack.js" />
+                                    <File name="auth\static\standard\plugins\codesnippet\lib\highlight\LICENSE" />
+                                    <File name="auth\static\standard\plugins\codesnippet\lib\highlight\README.md" />
+                                    <File name="auth\static\standard\plugins\codesnippet\lib\highlight\README.ru.md" />
+                                </Folder>
+                            </Folder>
+                            <Folder name="samples">
+                                <File name="auth\static\standard\plugins\codesnippet\samples\codesnippet.html" />
+                            </Folder>
+                            <File name="auth\static\standard\plugins\codesnippet\plugin.js" />
+                        </Folder>
+                        <Folder name="colorbutton">
+                            <Folder name="icons">
+                                <Folder name="hidpi">
+                                    <File name="auth\static\standard\plugins\colorbutton\icons\hidpi\bgcolor.png" />
+                                    <File name="auth\static\standard\plugins\colorbutton\icons\hidpi\textcolor.png" />
+                                </Folder>
+                                <File name="auth\static\standard\plugins\colorbutton\icons\bgcolor.png" />
+                                <File name="auth\static\standard\plugins\colorbutton\icons\textcolor.png" />
+                            </Folder>
+                            <Folder name="lang">
+                                <File name="auth\static\standard\plugins\colorbutton\lang\af.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\ar.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\az.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\bg.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\bn.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\bs.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\ca.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\cs.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\cy.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\da.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\de-ch.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\de.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\el.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\en-au.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\en-ca.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\en-gb.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\en.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\eo.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\es-mx.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\es.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\et.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\eu.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\fa.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\fi.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\fo.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\fr-ca.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\fr.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\gl.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\gu.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\he.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\hi.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\hr.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\hu.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\id.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\is.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\it.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\ja.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\ka.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\km.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\ko.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\ku.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\lt.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\lv.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\mk.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\mn.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\ms.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\nb.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\nl.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\no.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\oc.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\pl.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\pt-br.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\pt.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\ro.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\ru.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\si.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\sk.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\sl.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\sq.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\sr-latn.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\sr.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\sv.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\th.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\tr.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\tt.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\ug.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\uk.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\vi.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\zh-cn.js" />
+                                <File name="auth\static\standard\plugins\colorbutton\lang\zh.js" />
+                            </Folder>
+                            <File name="auth\static\standard\plugins\colorbutton\plugin.js" />
+                        </Folder>
+                        <Folder name="colordialog">
+                            <Folder name="dialogs">
+                                <File name="auth\static\standard\plugins\colordialog\dialogs\colordialog.css" />
+                                <File name="auth\static\standard\plugins\colordialog\dialogs\colordialog.js" />
+                            </Folder>
+                            <Folder name="lang">
+                                <File name="auth\static\standard\plugins\colordialog\lang\af.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\ar.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\az.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\bg.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\bn.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\bs.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\ca.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\cs.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\cy.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\da.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\de-ch.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\de.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\el.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\en-au.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\en-ca.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\en-gb.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\en.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\eo.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\es-mx.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\es.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\et.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\eu.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\fa.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\fi.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\fo.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\fr-ca.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\fr.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\gl.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\gu.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\he.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\hi.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\hr.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\hu.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\id.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\is.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\it.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\ja.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\ka.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\km.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\ko.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\ku.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\lt.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\lv.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\mk.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\mn.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\ms.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\nb.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\nl.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\no.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\oc.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\pl.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\pt-br.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\pt.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\ro.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\ru.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\si.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\sk.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\sl.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\sq.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\sr-latn.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\sr.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\sv.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\th.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\tr.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\tt.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\ug.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\uk.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\vi.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\zh-cn.js" />
+                                <File name="auth\static\standard\plugins\colordialog\lang\zh.js" />
+                            </Folder>
+                            <File name="auth\static\standard\plugins\colordialog\plugin.js" />
+                        </Folder>
+                        <Folder name="dialog">
+                            <File name="auth\static\standard\plugins\dialog\dialogDefinition.js" />
+                        </Folder>
+                        <Folder name="eqneditor">
+                            <Folder name="dialogs">
+                                <Folder name="lang">
+                                    <Folder name="_notes">
+                                        <File name="auth\static\standard\plugins\eqneditor\dialogs\lang\_notes\dwsync.xml" />
+                                    </Folder>
+                                    <File name="auth\static\standard\plugins\eqneditor\dialogs\lang\en.js" />
+                                </Folder>
+                                <Folder name="_notes">
+                                    <File name="auth\static\standard\plugins\eqneditor\dialogs\_notes\dwsync.xml" />
+                                </Folder>
+                                <File name="auth\static\standard\plugins\eqneditor\dialogs\eqneditor.js" />
+                            </Folder>
+                            <Folder name="_notes">
+                                <File name="auth\static\standard\plugins\eqneditor\_notes\dwsync.xml" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="find">
+                            <Folder name="dialogs">
+                                <File name="auth\static\standard\plugins\find\dialogs\find.js" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="googledocs">
+                            <Folder name="dialogs">
+                                <File name="auth\static\standard\plugins\googledocs\dialogs\googledocs.css" />
+                                <File name="auth\static\standard\plugins\googledocs\dialogs\googledocs.js" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="image">
+                            <Folder name="dialogs">
+                                <File name="auth\static\standard\plugins\image\dialogs\image.js" />
+                            </Folder>
+                            <Folder name="images">
+                                <File name="auth\static\standard\plugins\image\images\noimage.png" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="imgur">
+                            <Folder name="images">
+                                <File name="auth\static\standard\plugins\imgur\images\icon.png" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="link">
+                            <Folder name="dialogs">
+                                <File name="auth\static\standard\plugins\link\dialogs\anchor.js" />
+                                <File name="auth\static\standard\plugins\link\dialogs\link.js" />
+                            </Folder>
+                            <Folder name="images">
+                                <Folder name="hidpi">
+                                    <File name="auth\static\standard\plugins\link\images\hidpi\anchor.png" />
+                                </Folder>
+                                <File name="auth\static\standard\plugins\link\images\anchor.png" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="magicline">
+                            <Folder name="images">
+                                <Folder name="hidpi">
+                                    <File name="auth\static\standard\plugins\magicline\images\hidpi\icon-rtl.png" />
+                                    <File name="auth\static\standard\plugins\magicline\images\hidpi\icon.png" />
+                                </Folder>
+                                <File name="auth\static\standard\plugins\magicline\images\icon-rtl.png" />
+                                <File name="auth\static\standard\plugins\magicline\images\icon.png" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="pastefromword">
+                            <Folder name="filter">
+                                <File name="auth\static\standard\plugins\pastefromword\filter\default.js" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="scayt">
+                            <Folder name="dialogs">
+                                <File name="auth\static\standard\plugins\scayt\dialogs\dialog.css" />
+                                <File name="auth\static\standard\plugins\scayt\dialogs\options.js" />
+                                <File name="auth\static\standard\plugins\scayt\dialogs\toolbar.css" />
+                            </Folder>
+                            <Folder name="skins">
+                                <Folder name="moono-lisa">
+                                    <File name="auth\static\standard\plugins\scayt\skins\moono-lisa\scayt.css" />
+                                </Folder>
+                            </Folder>
+                            <File name="auth\static\standard\plugins\scayt\CHANGELOG.md" />
+                            <File name="auth\static\standard\plugins\scayt\LICENSE.md" />
+                            <File name="auth\static\standard\plugins\scayt\README.md" />
+                        </Folder>
+                        <Folder name="specialchar">
+                            <Folder name="dialogs">
+                                <Folder name="lang">
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\af.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\ar.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\az.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\bg.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\ca.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\cs.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\cy.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\da.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\de-ch.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\de.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\el.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\en-au.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\en-ca.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\en-gb.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\en.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\eo.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\es-mx.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\es.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\et.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\eu.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\fa.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\fi.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\fr-ca.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\fr.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\gl.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\he.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\hr.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\hu.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\id.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\it.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\ja.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\km.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\ko.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\ku.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\lt.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\lv.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\nb.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\nl.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\no.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\oc.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\pl.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\pt-br.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\pt.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\ro.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\ru.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\si.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\sk.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\sl.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\sq.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\sv.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\th.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\tr.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\tt.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\ug.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\uk.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\vi.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\zh-cn.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\zh.js" />
+                                    <File name="auth\static\standard\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+                                </Folder>
+                                <File name="auth\static\standard\plugins\specialchar\dialogs\specialchar.js" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="table">
+                            <Folder name="dialogs">
+                                <File name="auth\static\standard\plugins\table\dialogs\table.js" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="tableselection">
+                            <Folder name="styles">
+                                <File name="auth\static\standard\plugins\tableselection\styles\tableselection.css" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="tabletools">
+                            <Folder name="dialogs">
+                                <File name="auth\static\standard\plugins\tabletools\dialogs\tableCell.js" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="widget">
+                            <Folder name="images">
+                                <File name="auth\static\standard\plugins\widget\images\handle.png" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="wsc">
+                            <Folder name="dialogs">
+                                <File name="auth\static\standard\plugins\wsc\dialogs\ciframe.html" />
+                                <File name="auth\static\standard\plugins\wsc\dialogs\tmpFrameset.html" />
+                                <File name="auth\static\standard\plugins\wsc\dialogs\wsc.css" />
+                                <File name="auth\static\standard\plugins\wsc\dialogs\wsc.js" />
+                                <File name="auth\static\standard\plugins\wsc\dialogs\wsc_ie.js" />
+                            </Folder>
+                            <Folder name="skins">
+                                <Folder name="moono-lisa">
+                                    <File name="auth\static\standard\plugins\wsc\skins\moono-lisa\wsc.css" />
+                                </Folder>
+                            </Folder>
+                            <File name="auth\static\standard\plugins\wsc\LICENSE.md" />
+                            <File name="auth\static\standard\plugins\wsc\README.md" />
+                        </Folder>
+                        <File name="auth\static\standard\plugins\icons.png" />
+                        <File name="auth\static\standard\plugins\icons_hidpi.png" />
+                    </Folder>
+                    <Folder name="samples">
+                        <Folder name="css">
+                            <File name="auth\static\standard\samples\css\samples.css" />
+                        </Folder>
+                        <Folder name="img">
+                            <File name="auth\static\standard\samples\img\github-top.png" />
+                            <File name="auth\static\standard\samples\img\header-bg.png" />
+                            <File name="auth\static\standard\samples\img\header-separator.png" />
+                            <File name="auth\static\standard\samples\img\logo.png" />
+                            <File name="auth\static\standard\samples\img\navigation-tip.png" />
+                        </Folder>
+                        <Folder name="js">
+                            <File name="auth\static\standard\samples\js\sample.js" />
+                            <File name="auth\static\standard\samples\js\sf.js" />
+                        </Folder>
+                        <Folder name="old">
+                            <Folder name="assets">
+                                <Folder name="inlineall">
+                                    <File name="auth\static\standard\samples\old\assets\inlineall\logo.png" />
+                                </Folder>
+                                <Folder name="outputxhtml">
+                                    <File name="auth\static\standard\samples\old\assets\outputxhtml\outputxhtml.css" />
+                                </Folder>
+                                <Folder name="uilanguages">
+                                    <File name="auth\static\standard\samples\old\assets\uilanguages\languages.js" />
+                                </Folder>
+                                <File name="auth\static\standard\samples\old\assets\posteddata.php" />
+                                <File name="auth\static\standard\samples\old\assets\sample.jpg" />
+                            </Folder>
+                            <Folder name="codesnippet">
+                                <File name="auth\static\standard\samples\old\codesnippet\codesnippet.html" />
+                            </Folder>
+                            <Folder name="dialog">
+                                <Folder name="assets">
+                                    <File name="auth\static\standard\samples\old\dialog\assets\my_dialog.js" />
+                                </Folder>
+                                <File name="auth\static\standard\samples\old\dialog\dialog.html" />
+                            </Folder>
+                            <Folder name="enterkey">
+                                <File name="auth\static\standard\samples\old\enterkey\enterkey.html" />
+                            </Folder>
+                            <Folder name="htmlwriter">
+                                <Folder name="assets">
+                                    <Folder name="outputforflash">
+                                        <File name="auth\static\standard\samples\old\htmlwriter\assets\outputforflash\outputforflash.fla" />
+                                        <File name="auth\static\standard\samples\old\htmlwriter\assets\outputforflash\outputforflash.swf" />
+                                        <File name="auth\static\standard\samples\old\htmlwriter\assets\outputforflash\swfobject.js" />
+                                    </Folder>
+                                </Folder>
+                                <File name="auth\static\standard\samples\old\htmlwriter\outputforflash.html" />
+                                <File name="auth\static\standard\samples\old\htmlwriter\outputhtml.html" />
+                            </Folder>
+                            <Folder name="magicline">
+                                <File name="auth\static\standard\samples\old\magicline\magicline.html" />
+                            </Folder>
+                            <Folder name="toolbar">
+                                <File name="auth\static\standard\samples\old\toolbar\toolbar.html" />
+                            </Folder>
+                            <Folder name="wysiwygarea">
+                                <File name="auth\static\standard\samples\old\wysiwygarea\fullpage.html" />
+                            </Folder>
+                            <File name="auth\static\standard\samples\old\ajax.html" />
+                            <File name="auth\static\standard\samples\old\api.html" />
+                            <File name="auth\static\standard\samples\old\appendto.html" />
+                            <File name="auth\static\standard\samples\old\datafiltering.html" />
+                            <File name="auth\static\standard\samples\old\divreplace.html" />
+                            <File name="auth\static\standard\samples\old\index.html" />
+                            <File name="auth\static\standard\samples\old\inlineall.html" />
+                            <File name="auth\static\standard\samples\old\inlinebycode.html" />
+                            <File name="auth\static\standard\samples\old\inlinetextarea.html" />
+                            <File name="auth\static\standard\samples\old\jquery.html" />
+                            <File name="auth\static\standard\samples\old\readonly.html" />
+                            <File name="auth\static\standard\samples\old\replacebyclass.html" />
+                            <File name="auth\static\standard\samples\old\replacebycode.html" />
+                            <File name="auth\static\standard\samples\old\sample.css" />
+                            <File name="auth\static\standard\samples\old\sample.js" />
+                            <File name="auth\static\standard\samples\old\sample_posteddata.php" />
+                            <File name="auth\static\standard\samples\old\tabindex.html" />
+                            <File name="auth\static\standard\samples\old\uicolor.html" />
+                            <File name="auth\static\standard\samples\old\uilanguages.html" />
+                            <File name="auth\static\standard\samples\old\xhtmlstyle.html" />
+                        </Folder>
+                        <Folder name="toolbarconfigurator">
+                            <Folder name="css">
+                                <File name="auth\static\standard\samples\toolbarconfigurator\css\fontello.css" />
+                            </Folder>
+                            <Folder name="font">
+                                <File name="auth\static\standard\samples\toolbarconfigurator\font\config.json" />
+                                <File name="auth\static\standard\samples\toolbarconfigurator\font\fontello.eot" />
+                                <File name="auth\static\standard\samples\toolbarconfigurator\font\fontello.svg" />
+                                <File name="auth\static\standard\samples\toolbarconfigurator\font\fontello.ttf" />
+                                <File name="auth\static\standard\samples\toolbarconfigurator\font\fontello.woff" />
+                                <File name="auth\static\standard\samples\toolbarconfigurator\font\LICENSE.txt" />
+                            </Folder>
+                            <Folder name="js">
+                                <File name="auth\static\standard\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
+                                <File name="auth\static\standard\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
+                                <File name="auth\static\standard\samples\toolbarconfigurator\js\toolbarmodifier.js" />
+                                <File name="auth\static\standard\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
+                            </Folder>
+                            <File name="auth\static\standard\samples\toolbarconfigurator\index.html" />
+                        </Folder>
+                        <File name="auth\static\standard\samples\index.html" />
+                    </Folder>
+                    <Folder name="skins">
+                        <Folder name="moono-lisa">
+                            <Folder name="images">
+                                <Folder name="hidpi">
+                                    <File name="auth\static\standard\skins\moono-lisa\images\hidpi\close.png" />
+                                    <File name="auth\static\standard\skins\moono-lisa\images\hidpi\lock-open.png" />
+                                    <File name="auth\static\standard\skins\moono-lisa\images\hidpi\lock.png" />
+                                    <File name="auth\static\standard\skins\moono-lisa\images\hidpi\refresh.png" />
+                                </Folder>
+                                <File name="auth\static\standard\skins\moono-lisa\images\arrow.png" />
+                                <File name="auth\static\standard\skins\moono-lisa\images\close.png" />
+                                <File name="auth\static\standard\skins\moono-lisa\images\lock-open.png" />
+                                <File name="auth\static\standard\skins\moono-lisa\images\lock.png" />
+                                <File name="auth\static\standard\skins\moono-lisa\images\refresh.png" />
+                                <File name="auth\static\standard\skins\moono-lisa\images\spinner.gif" />
+                            </Folder>
+                            <File name="auth\static\standard\skins\moono-lisa\dialog.css" />
+                            <File name="auth\static\standard\skins\moono-lisa\dialog_ie.css" />
+                            <File name="auth\static\standard\skins\moono-lisa\dialog_ie8.css" />
+                            <File name="auth\static\standard\skins\moono-lisa\dialog_iequirks.css" />
+                            <File name="auth\static\standard\skins\moono-lisa\editor.css" />
+                            <File name="auth\static\standard\skins\moono-lisa\editor_gecko.css" />
+                            <File name="auth\static\standard\skins\moono-lisa\editor_ie.css" />
+                            <File name="auth\static\standard\skins\moono-lisa\editor_ie8.css" />
+                            <File name="auth\static\standard\skins\moono-lisa\editor_iequirks.css" />
+                            <File name="auth\static\standard\skins\moono-lisa\icons.png" />
+                            <File name="auth\static\standard\skins\moono-lisa\icons_hidpi.png" />
+                            <File name="auth\static\standard\skins\moono-lisa\readme.md" />
+                        </Folder>
+                    </Folder>
+                    <File name="auth\static\standard\build-config.js" />
+                    <File name="auth\static\standard\CHANGES.md" />
+                    <File name="auth\static\standard\ckeditor.js" />
+                    <File name="auth\static\standard\config.js" />
+                    <File name="auth\static\standard\contents.css" />
+                    <File name="auth\static\standard\LICENSE.md" />
+                    <File name="auth\static\standard\README.md" />
+                    <File name="auth\static\standard\styles.js" />
+                </Folder>
+                <Folder name="uikit">
+                    <Folder name="css">
+                        <File name="auth\static\uikit\css\uikit-rtl.css" />
+                        <File name="auth\static\uikit\css\uikit-rtl.min.css" />
+                        <File name="auth\static\uikit\css\uikit.css" />
+                        <File name="auth\static\uikit\css\uikit.min.css" />
+                    </Folder>
+                    <Folder name="js">
+                        <File name="auth\static\uikit\js\uikit-icons.js" />
+                        <File name="auth\static\uikit\js\uikit-icons.min.js" />
+                        <File name="auth\static\uikit\js\uikit.js" />
+                        <File name="auth\static\uikit\js\uikit.min.js" />
+                    </Folder>
+                    <Folder name="scss">
+                        <Folder name="components">
+                            <File name="auth\static\uikit\scss\components\accordion.scss" />
+                            <File name="auth\static\uikit\scss\components\alert.scss" />
+                            <File name="auth\static\uikit\scss\components\align.scss" />
+                            <File name="auth\static\uikit\scss\components\animation.scss" />
+                            <File name="auth\static\uikit\scss\components\article.scss" />
+                            <File name="auth\static\uikit\scss\components\background.scss" />
+                            <File name="auth\static\uikit\scss\components\badge.scss" />
+                            <File name="auth\static\uikit\scss\components\base.scss" />
+                            <File name="auth\static\uikit\scss\components\breadcrumb.scss" />
+                            <File name="auth\static\uikit\scss\components\button.scss" />
+                            <File name="auth\static\uikit\scss\components\card.scss" />
+                            <File name="auth\static\uikit\scss\components\close.scss" />
+                            <File name="auth\static\uikit\scss\components\column.scss" />
+                            <File name="auth\static\uikit\scss\components\comment.scss" />
+                            <File name="auth\static\uikit\scss\components\container.scss" />
+                            <File name="auth\static\uikit\scss\components\countdown.scss" />
+                            <File name="auth\static\uikit\scss\components\cover.scss" />
+                            <File name="auth\static\uikit\scss\components\description-list.scss" />
+                            <File name="auth\static\uikit\scss\components\divider.scss" />
+                            <File name="auth\static\uikit\scss\components\dotnav.scss" />
+                            <File name="auth\static\uikit\scss\components\drop.scss" />
+                            <File name="auth\static\uikit\scss\components\dropdown.scss" />
+                            <File name="auth\static\uikit\scss\components\flex.scss" />
+                            <File name="auth\static\uikit\scss\components\form-range.scss" />
+                            <File name="auth\static\uikit\scss\components\form.scss" />
+                            <File name="auth\static\uikit\scss\components\grid-masonry.scss" />
+                            <File name="auth\static\uikit\scss\components\grid.scss" />
+                            <File name="auth\static\uikit\scss\components\heading.scss" />
+                            <File name="auth\static\uikit\scss\components\height.scss" />
+                            <File name="auth\static\uikit\scss\components\icon.scss" />
+                            <File name="auth\static\uikit\scss\components\iconnav.scss" />
+                            <File name="auth\static\uikit\scss\components\inverse.scss" />
+                            <File name="auth\static\uikit\scss\components\label.scss" />
+                            <File name="auth\static\uikit\scss\components\leader.scss" />
+                            <File name="auth\static\uikit\scss\components\lightbox.scss" />
+                            <File name="auth\static\uikit\scss\components\link.scss" />
+                            <File name="auth\static\uikit\scss\components\list.scss" />
+                            <File name="auth\static\uikit\scss\components\margin.scss" />
+                            <File name="auth\static\uikit\scss\components\marker.scss" />
+                            <File name="auth\static\uikit\scss\components\mixin.scss" />
+                            <File name="auth\static\uikit\scss\components\modal.scss" />
+                            <File name="auth\static\uikit\scss\components\nav.scss" />
+                            <File name="auth\static\uikit\scss\components\navbar.scss" />
+                            <File name="auth\static\uikit\scss\components\notification.scss" />
+                            <File name="auth\static\uikit\scss\components\offcanvas.scss" />
+                            <File name="auth\static\uikit\scss\components\overlay.scss" />
+                            <File name="auth\static\uikit\scss\components\padding.scss" />
+                            <File name="auth\static\uikit\scss\components\pagination.scss" />
+                            <File name="auth\static\uikit\scss\components\placeholder.scss" />
+                            <File name="auth\static\uikit\scss\components\position.scss" />
+                            <File name="auth\static\uikit\scss\components\print.scss" />
+                            <File name="auth\static\uikit\scss\components\progress.scss" />
+                            <File name="auth\static\uikit\scss\components\search.scss" />
+                            <File name="auth\static\uikit\scss\components\section.scss" />
+                            <File name="auth\static\uikit\scss\components\slidenav.scss" />
+                            <File name="auth\static\uikit\scss\components\slider.scss" />
+                            <File name="auth\static\uikit\scss\components\slideshow.scss" />
+                            <File name="auth\static\uikit\scss\components\sortable.scss" />
+                            <File name="auth\static\uikit\scss\components\spinner.scss" />
+                            <File name="auth\static\uikit\scss\components\sticky.scss" />
+                            <File name="auth\static\uikit\scss\components\subnav.scss" />
+                            <File name="auth\static\uikit\scss\components\svg.scss" />
+                            <File name="auth\static\uikit\scss\components\switcher.scss" />
+                            <File name="auth\static\uikit\scss\components\tab.scss" />
+                            <File name="auth\static\uikit\scss\components\table.scss" />
+                            <File name="auth\static\uikit\scss\components\text.scss" />
+                            <File name="auth\static\uikit\scss\components\thumbnav.scss" />
+                            <File name="auth\static\uikit\scss\components\tile.scss" />
+                            <File name="auth\static\uikit\scss\components\tooltip.scss" />
+                            <File name="auth\static\uikit\scss\components\totop.scss" />
+                            <File name="auth\static\uikit\scss\components\transition.scss" />
+                            <File name="auth\static\uikit\scss\components\utility.scss" />
+                            <File name="auth\static\uikit\scss\components\variables.scss" />
+                            <File name="auth\static\uikit\scss\components\visibility.scss" />
+                            <File name="auth\static\uikit\scss\components\width.scss" />
+                            <File name="auth\static\uikit\scss\components\_import.components.scss" />
+                            <File name="auth\static\uikit\scss\components\_import.scss" />
+                            <File name="auth\static\uikit\scss\components\_import.utilities.scss" />
+                        </Folder>
+                        <Folder name="theme">
+                            <File name="auth\static\uikit\scss\theme\accordion.scss" />
+                            <File name="auth\static\uikit\scss\theme\alert.scss" />
+                            <File name="auth\static\uikit\scss\theme\align.scss" />
+                            <File name="auth\static\uikit\scss\theme\animation.scss" />
+                            <File name="auth\static\uikit\scss\theme\article.scss" />
+                            <File name="auth\static\uikit\scss\theme\background.scss" />
+                            <File name="auth\static\uikit\scss\theme\badge.scss" />
+                            <File name="auth\static\uikit\scss\theme\base.scss" />
+                            <File name="auth\static\uikit\scss\theme\breadcrumb.scss" />
+                            <File name="auth\static\uikit\scss\theme\button.scss" />
+                            <File name="auth\static\uikit\scss\theme\card.scss" />
+                            <File name="auth\static\uikit\scss\theme\close.scss" />
+                            <File name="auth\static\uikit\scss\theme\column.scss" />
+                            <File name="auth\static\uikit\scss\theme\comment.scss" />
+                            <File name="auth\static\uikit\scss\theme\container.scss" />
+                            <File name="auth\static\uikit\scss\theme\countdown.scss" />
+                            <File name="auth\static\uikit\scss\theme\description-list.scss" />
+                            <File name="auth\static\uikit\scss\theme\divider.scss" />
+                            <File name="auth\static\uikit\scss\theme\dotnav.scss" />
+                            <File name="auth\static\uikit\scss\theme\drop.scss" />
+                            <File name="auth\static\uikit\scss\theme\dropdown.scss" />
+                            <File name="auth\static\uikit\scss\theme\form-range.scss" />
+                            <File name="auth\static\uikit\scss\theme\form.scss" />
+                            <File name="auth\static\uikit\scss\theme\grid.scss" />
+                            <File name="auth\static\uikit\scss\theme\heading.scss" />
+                            <File name="auth\static\uikit\scss\theme\height.scss" />
+                            <File name="auth\static\uikit\scss\theme\icon.scss" />
+                            <File name="auth\static\uikit\scss\theme\iconnav.scss" />
+                            <File name="auth\static\uikit\scss\theme\inverse.scss" />
+                            <File name="auth\static\uikit\scss\theme\label.scss" />
+                            <File name="auth\static\uikit\scss\theme\leader.scss" />
+                            <File name="auth\static\uikit\scss\theme\lightbox.scss" />
+                            <File name="auth\static\uikit\scss\theme\link.scss" />
+                            <File name="auth\static\uikit\scss\theme\list.scss" />
+                            <File name="auth\static\uikit\scss\theme\margin.scss" />
+                            <File name="auth\static\uikit\scss\theme\marker.scss" />
+                            <File name="auth\static\uikit\scss\theme\modal.scss" />
+                            <File name="auth\static\uikit\scss\theme\nav.scss" />
+                            <File name="auth\static\uikit\scss\theme\navbar.scss" />
+                            <File name="auth\static\uikit\scss\theme\notification.scss" />
+                            <File name="auth\static\uikit\scss\theme\offcanvas.scss" />
+                            <File name="auth\static\uikit\scss\theme\overlay.scss" />
+                            <File name="auth\static\uikit\scss\theme\padding.scss" />
+                            <File name="auth\static\uikit\scss\theme\pagination.scss" />
+                            <File name="auth\static\uikit\scss\theme\placeholder.scss" />
+                            <File name="auth\static\uikit\scss\theme\position.scss" />
+                            <File name="auth\static\uikit\scss\theme\progress.scss" />
+                            <File name="auth\static\uikit\scss\theme\search.scss" />
+                            <File name="auth\static\uikit\scss\theme\section.scss" />
+                            <File name="auth\static\uikit\scss\theme\slidenav.scss" />
+                            <File name="auth\static\uikit\scss\theme\sortable.scss" />
+                            <File name="auth\static\uikit\scss\theme\spinner.scss" />
+                            <File name="auth\static\uikit\scss\theme\sticky.scss" />
+                            <File name="auth\static\uikit\scss\theme\subnav.scss" />
+                            <File name="auth\static\uikit\scss\theme\tab.scss" />
+                            <File name="auth\static\uikit\scss\theme\table.scss" />
+                            <File name="auth\static\uikit\scss\theme\text.scss" />
+                            <File name="auth\static\uikit\scss\theme\thumbnav.scss" />
+                            <File name="auth\static\uikit\scss\theme\tile.scss" />
+                            <File name="auth\static\uikit\scss\theme\tooltip.scss" />
+                            <File name="auth\static\uikit\scss\theme\totop.scss" />
+                            <File name="auth\static\uikit\scss\theme\transition.scss" />
+                            <File name="auth\static\uikit\scss\theme\utility.scss" />
+                            <File name="auth\static\uikit\scss\theme\variables.scss" />
+                            <File name="auth\static\uikit\scss\theme\width.scss" />
+                            <File name="auth\static\uikit\scss\theme\_import.scss" />
+                        </Folder>
+                        <File name="auth\static\uikit\scss\index.scss" />
+                        <File name="auth\static\uikit\scss\mixins-theme.scss" />
+                        <File name="auth\static\uikit\scss\mixins.scss" />
+                        <File name="auth\static\uikit\scss\uikit-theme.scss" />
+                        <File name="auth\static\uikit\scss\uikit.scss" />
+                        <File name="auth\static\uikit\scss\variables-theme.scss" />
+                        <File name="auth\static\uikit\scss\variables.scss" />
+                    </Folder>
+                </Folder>
+            </Folder>
+            <Folder name="templates">
+                <Folder name="admin">
+                    <File name="auth\templates\admin\board_create.htm" />
+                    <File name="auth\templates\admin\board_edit.htm" />
+                    <File name="auth\templates\admin\category_create.htm" />
+                    <File name="auth\templates\admin\category_edit.htm" />
+                    <File name="auth\templates\admin\edit_warning.htm" />
+                    <File name="auth\templates\admin\forum.htm" />
+                    <File name="auth\templates\admin\forum_delete.htm" />
+                    <File name="auth\templates\admin\groups.htm" />
+                    <File name="auth\templates\admin\group_create.htm" />
+                    <File name="auth\templates\admin\group_edit.htm" />
+                    <File name="auth\templates\admin\group_permissions.htm" />
+                    <File name="auth\templates\admin\info.htm" />
+                    <File name="auth\templates\admin\logs.htm" />
+                    <File name="auth\templates\admin\theme.html" />
+                    <File name="auth\templates\admin\users.htm" />
+                    <File name="auth\templates\admin\users_groups.htm" />
+                    <File name="auth\templates\admin\user_create.htm" />
+                    <File name="auth\templates\admin\user_edit.htm" />
+                    <File name="auth\templates\admin\user_permissions.htm" />
+                    <File name="auth\templates\admin\warnings.htm" />
+                </Folder>
+                <Folder name="components">
+                    <File name="auth\templates\components\admin-board-edit-card.html" />
+                    <File name="auth\templates\components\admin-category-boards-card.html" />
+                    <File name="auth\templates\components\admin-category-edit-card.html" />
+                    <File name="auth\templates\components\admin-create-board-card.html" />
+                    <File name="auth\templates\components\admin-create-category-card.html" />
+                    <File name="auth\templates\components\admin-create-group-card.html" />
+                    <File name="auth\templates\components\admin-create-user-card.html" />
+                    <File name="auth\templates\components\admin-delete-card.html" />
+                    <File name="auth\templates\components\admin-edit-group-card.html" />
+                    <File name="auth\templates\components\admin-edit-user-card.html" />
+                    <File name="auth\templates\components\admin-edit-user-groups-card.html" />
+                    <File name="auth\templates\components\admin-edit-user-permissions-card.html" />
+                    <File name="auth\templates\components\admin-edit-warning-card.html" />
+                    <File name="auth\templates\components\admin-groups-list-card.html" />
+                    <File name="auth\templates\components\admin-info-card.html" />
+                    <File name="auth\templates\components\admin-logs-card.html" />
+                    <File name="auth\templates\components\admin-menu.html" />
+                    <File name="auth\templates\components\admin-user-list-card.html" />
+                    <File name="auth\templates\components\admin-warning-list-card.html" />
+                    <File name="auth\templates\components\agreement-card.html" />
+                    <File name="auth\templates\components\board-item.html" />
+                    <File name="auth\templates\components\card.html" />
+                    <File name="auth\templates\components\category-card.html" />
+                    <File name="auth\templates\components\create-pm-card.html" />
+                    <File name="auth\templates\components\create-thread-card.html" />
+                    <File name="auth\templates\components\delete-thread-card.html" />
+                    <File name="auth\templates\components\edit-profile-card.html" />
+                    <File name="auth\templates\components\editor-card.html" />
+                    <File name="auth\templates\components\header.html" />
+                    <File name="auth\templates\components\invite-user-card.html" />
+                    <File name="auth\templates\components\menu.html" />
+                    <File name="auth\templates\components\no-thread-card.html" />
+                    <File name="auth\templates\components\post-item.html" />
+                    <File name="auth\templates\components\privacy-card.html" />
+                    <File name="auth\templates\components\private-message-card.html" />
+                    <File name="auth\templates\components\private-messages-card.html" />
+                    <File name="auth\templates\components\profile-card.html" />
+                    <File name="auth\templates\components\profile-nav.html" />
+                    <File name="auth\templates\components\signin-card.html" />
+                    <File name="auth\templates\components\signup-card.html" />
+                    <File name="auth\templates\components\thread-card.html" />
+                    <File name="auth\templates\components\thread-item.html" />
+                    <File name="auth\templates\components\thread-posts-card.html" />
+                    <File name="auth\templates\components\user-delete-card.html" />
+                    <File name="auth\templates\components\user-list-card.html" />
+                    <File name="auth\templates\components\who-is-online-card.html" />
+                </Folder>
+                <Folder name="error">
+                    <File name="auth\templates\error\403.htm" />
+                    <File name="auth\templates\error\404.htm" />
+                    <File name="auth\templates\error\410.htm" />
+                </Folder>
+                <Folder name="forum">
+                    <File name="auth\templates\forum\board.htm" />
+                    <File name="auth\templates\forum\create_post.htm" />
+                    <File name="auth\templates\forum\create_thread.htm" />
+                    <File name="auth\templates\forum\delete_threads.htm" />
+                    <File name="auth\templates\forum\edit_post.htm" />
+                    <File name="auth\templates\forum\forum.htm" />
+                    <File name="auth\templates\forum\move_threads.htm" />
+                    <File name="auth\templates\forum\subboards.htm" />
+                    <File name="auth\templates\forum\thread.htm" />
+                </Folder>
+                <Folder name="mail">
+                    <File name="auth\templates\mail\activate.htm" />
+                    <File name="auth\templates\mail\invite.htm" />
+                </Folder>
+                <Folder name="user">
+                    <File name="auth\templates\user\agreement.htm" />
+                    <File name="auth\templates\user\invite.htm" />
+                    <File name="auth\templates\user\pms.htm" />
+                    <File name="auth\templates\user\pm_send.htm" />
+                    <File name="auth\templates\user\privacy.htm" />
+                    <File name="auth\templates\user\profile.htm" />
+                    <File name="auth\templates\user\profile_edit.htm" />
+                    <File name="auth\templates\user\sign_in.htm" />
+                    <File name="auth\templates\user\sign_up.htm" />
+                    <File name="auth\templates\user\users.htm" />
+                    <File name="auth\templates\user\user_delete.htm" />
+                    <File name="auth\templates\user\view_pm.htm" />
+                    <File name="auth\templates\user\warn.htm" />
+                </Folder>
+                <File name="auth\templates\base.htm" />
+                <File name="auth\templates\form_utils.htm" />
+            </Folder>
+            <Folder name="theme">
+                <File name="auth\theme\theme.yaml" />
+            </Folder>
+            <File name="auth\admin.py" />
+            <File name="auth\admin_forums.py" />
+            <File name="auth\error_pages.py" />
+            <File name="auth\forum.py" />
+            <File name="auth\log.py" />
+            <File name="auth\menu.py" />
+            <File name="auth\nav.py" />
+            <File name="auth\settings.py" />
+            <File name="auth\tasks.py" />
+            <File name="auth\user.py" />
+            <File name="auth\utils.py" />
+            <File name="auth\warn.py" />
+            <File name="auth\__init__.py" />
+        </Folder>
+        <Folder name="authz">
+            <File name="authz\authz.py" />
+            <File name="authz\permission.py" />
+            <File name="authz\rights.py" />
+            <File name="authz\__init__.py" />
+        </Folder>
+        <Folder name="flask_authz">
+            <File name="flask_authz\rights.py" />
+            <File name="flask_authz\__init__.py" />
+        </Folder>
+        <File name="acforum" />
+        <File name="config.py" />
+        <File name="LICENSE" />
+        <File name="README.md" />
+        <File name="requirements.txt" />
+        <File name="run.wsgi" />
+        <File name="worker.py" />
+    </Project>
+</NotepadPlus>

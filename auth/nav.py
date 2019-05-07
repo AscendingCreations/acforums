@@ -47,6 +47,9 @@ def get_admin_nav():
 
 	if authz.check(rights.authenticated()):
 		subnav.append(('Info', url_for('admin.info')))
+
+	if authz.check(rights.authenticated()):
+		subnav.append(('Theme', url_for('admin.admin_theme')))
 	
 	if authz.check(rights.permission(Group, 'forum:view')):
 		subnav.append(('Category & Boards', url_for('admin_forum.admin_view_forum')))
