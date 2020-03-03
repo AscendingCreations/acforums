@@ -10,11 +10,9 @@ add psycopg2-binary to the requirements or install it to get  Full sql support.
 3. `pip install -r requirements.txt`
 If you're on Python 3.6 or less skip step 4.
 4. `pip install -U https://github.com/celery/celery/archive/master.zip`
-5. `python3 acforum setup`
-If you do not want to seed user data skip step 6.
-6. `python3 acforum setup_mass`
-This will run a local Copy of the forums.
-7. `python3 acforum run` 
+5. `python3 acforum setup` This will Setup the Database and default groups.
+6. `python3 acforum setup_mass` If you do not want to seed user data skip step 6.
+7. `python3 acforum run`  This will run a local Copy of the forums.
 Go into the forums via : http://127.0.0.1:5000 and register an account then copy
 and past the activation URL From the command line into the browser to Activate your first account.
 Login with the first account to make sure it is activated then go into the command and press
@@ -32,6 +30,9 @@ from you as well.
 
 # Contributors
 Alex Lopez  			Theme Design
+
 Andrew Wheeler  		Forum Software Creator
+
 Stephan Van Schaiks  	Authz Creator and Base python project creator
+
 Thank you Testers! 
